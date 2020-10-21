@@ -62,14 +62,6 @@ public class ServerApp {
   }
 
   public void service(int port) {
-    
-    Date date = new Date();
-    System.out.println(date);
-    
-    SimpleDateFormat simpl = new SimpleDateFormat("yyyy년 mm월 dd일 hh시 mm분");
-    String s = simpl.format(date);
-    System.out.println("date: " + s);
-    
     notifyApplicationContextListenerOnServiceStarted();
     
 
