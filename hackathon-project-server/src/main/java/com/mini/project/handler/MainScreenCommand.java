@@ -15,7 +15,11 @@ public class MainScreenCommand implements Command {
     SimpleDateFormat simpl = new SimpleDateFormat("yyyy년 mm월 dd일 hh시 mm분");
     String s = simpl.format(date);
     System.out.println("date: " + s);
-    
   }
-
+  
+  /*
+  public void list(Member member) {
+    System.out.println(member.);
+  }
+  */
 }
