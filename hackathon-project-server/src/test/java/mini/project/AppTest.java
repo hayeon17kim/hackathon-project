@@ -4,6 +4,7 @@
 package mini.project;
 
 import org.junit.Test;
+import com.mini.project.App;
 import static org.junit.Assert.*;
 
 public class AppTest {
