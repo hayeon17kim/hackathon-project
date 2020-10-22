@@ -27,7 +27,7 @@ public class Todo {
   
   @Override
   public String toString() {
-    return  (isDone ? "● " : "○ ") + date + " | "+ categoryString() + " | " + title  ;
+    return  (isDone ? " ●" : " ○") + /*date + */" | "+ categoryString() + " | " + title  ;
   }
 
   public Date getDate() {

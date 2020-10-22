@@ -33,8 +33,6 @@ public class ClientApp {
         break;
     }
     System.out.println("안녕!");
-
-
   }
 
   private static void request(String message) {
@@ -78,7 +76,6 @@ public class ClientApp {
         break;
       } else if (response.length() > 3 && response.substring(0, 3).equals("$%$")) {
         clientId = response.substring(3, response.length());
-        System.out.println(clientId);
         } 
       else if (response.equals("!{}!")) {
         // 사용자로부터 값을 입력을 받아서 서버에 보낸다.

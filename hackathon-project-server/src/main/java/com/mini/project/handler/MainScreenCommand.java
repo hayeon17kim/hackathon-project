@@ -11,7 +11,7 @@ import com.mini.project.domain.Todo;
 
 public class MainScreenCommand implements Command {
 
-  
+  List<Todo> todoList;
   public MainScreenCommand() {
 
   }
@@ -24,28 +24,33 @@ public class MainScreenCommand implements Command {
     Calendar time = Calendar.getInstance();
     String date = date1.format(time.getTime());
     String timeNow = date2.format(time.getTime());
-
+    todoList = member.getTodoList();
 
     out.println("==============================");
     out.printf("%s          %s\n", date, timeNow);
     out.println("==============================");
     getTimeScreen(out, in, timeNow);
     out.println("============================");
-    out.printf("%s님, 총 %d개의 할 일이 남았습니다.\n", member.getName(), member.getTodoList().size());
+    out.printf("%s님, 총 %d개의 할 일이 남았습니다.\n", member.getName(), countTodo(todoList, date));
     out.println("============================");
-    
-    for (Todo todo : member.getTodoList()) {
-      out.println(todo);
+    for (Todo todo : todoList) {
+      if (todo.getDate().toString().equals(date)) {
+        out.println(todo);
+      }
     }
-    
     out.println("============================");
-    
   }
   
-  public int calcHowManyTodo(List<Todo> list) {
-    //for (int i = )
-    
-    return 0;
+  
+  
+  public int countTodo(List<Todo> list, String date) {
+    int count = 0;
+    for (Todo todo : todoList) {
+      if (todo.getDate().toString().equals(date) && !todo.isDone()) {
+        count++;
+      }
+    }
+    return count;
   }
   
   
@@ -69,14 +74,4 @@ public class MainScreenCommand implements Command {
     }
   }
   
-  public static void mainMorning() throws InterruptedException {
-    SimpleDateFormat date1 = new SimpleDateFormat("yyyy-MM-dd");
-    SimpleDateFormat date2 = new SimpleDateFormat("HH : mm");
-
-    Calendar time = Calendar.getInstance();
-    String date = date1.format(time.getTime());
-    String timeNow = date2.format(time.getTime());
-
-
-  }
 }

@@ -39,13 +39,6 @@ public class RequestMappingListener implements ApplicationContextListener {
     context.put("/member/update", new MemberUpdateCommand(memberList));
     context.put("/member/delete", new MemberDeleteCommand(memberList));
 
-    /*
-    context.put("/todo/add", new TodoAddCommand(todoList));
-    context.put("/todo/delete", new TodoDeleteCommand(todoList));
-    context.put("/todo/detail", new TodoDetailCommand(todoList));
-    context.put("/todo/list", new TodoListCommand(todoList));
-    context.put("/todo/update", new TodoUpdateCommand(todoList,memberListCommand));
-    */
     context.put("/todo/add", new TodoAddCommand());
     context.put("/todo/delete", new TodoDeleteCommand());
     context.put("/todo/detail", new TodoDetailCommand());
@@ -60,6 +53,7 @@ public class RequestMappingListener implements ApplicationContextListener {
     context.put("/report", new ReportCommand());
 
     context.put("/hello", new HelloCommand());
+    
 
   }
 
