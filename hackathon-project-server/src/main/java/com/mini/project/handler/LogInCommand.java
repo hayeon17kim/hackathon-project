@@ -6,12 +6,12 @@ import java.util.List;
 import com.mini.project.domain.Member;
 import com.mini.util.Prompt;
 
-public class LogInCommnad implements Command {
+public class LogInCommand implements Command {
   
   List<Member> memberList;
   Member loggedInMember;
 
-  public LogInCommnad(List<Member> list, Member member) {
+  public LogInCommand(List<Member> list, Member member) {
     this.memberList = list;
     this.loggedInMember = member;
   }

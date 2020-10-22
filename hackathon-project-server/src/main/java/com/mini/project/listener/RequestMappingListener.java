@@ -14,7 +14,7 @@ import com.mini.project.handler.BoardListCommand;
 import com.mini.project.handler.BoardUpdateCommand;
 import com.mini.project.handler.CalculatorCommand;
 import com.mini.project.handler.HelloCommand;
-import com.mini.project.handler.LogInCommnad;
+import com.mini.project.handler.LogInCommand;
 import com.mini.project.handler.MemberAddCommand;
 import com.mini.project.handler.MemberDeleteCommand;
 import com.mini.project.handler.MemberDetailCommand;
@@ -55,7 +55,7 @@ public class RequestMappingListener implements ApplicationContextListener {
     context.put("/project/detail", new ProjectDetailCommand(projectList));
     context.put("/project/update", new ProjectUpdateCommand(projectList, memberListCommand));
     context.put("/project/delete", new ProjectDeleteCommand(projectList));
-    context.put("/login", new LogInCommnad(memberList, (Member) context.get("loggedInMember")));
+    context.put("/login", new LogInCommand(memberList, (Member) context.get("loggedInMember")));
 
     context.put("/hello", new HelloCommand());
 
