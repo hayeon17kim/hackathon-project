@@ -9,16 +9,16 @@ import com.mini.util.Prompt;
 public class LogInCommnad implements Command {
   
   List<Member> memberList;
-  Member loggedMember;
+  Member loggedInMember;
 
   public LogInCommnad(List<Member> list, Member member) {
     this.memberList = list;
-    this.loggedMember = member;
+    this.loggedInMember = member;
   }
 
   @Override
   public void execute(PrintWriter out, BufferedReader in) {
-    //..
+    loggedInMember = logIn();
   }
   
   public Member logIn() {

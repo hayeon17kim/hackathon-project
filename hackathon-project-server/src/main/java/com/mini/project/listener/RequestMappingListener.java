@@ -14,6 +14,7 @@ import com.mini.project.handler.BoardListCommand;
 import com.mini.project.handler.BoardUpdateCommand;
 import com.mini.project.handler.CalculatorCommand;
 import com.mini.project.handler.HelloCommand;
+import com.mini.project.handler.LogInCommnad;
 import com.mini.project.handler.MemberAddCommand;
 import com.mini.project.handler.MemberDeleteCommand;
 import com.mini.project.handler.MemberDetailCommand;
@@ -24,11 +25,6 @@ import com.mini.project.handler.ProjectDeleteCommand;
 import com.mini.project.handler.ProjectDetailCommand;
 import com.mini.project.handler.ProjectListCommand;
 import com.mini.project.handler.ProjectUpdateCommand;
-import com.mini.project.handler.TaskAddCommand;
-import com.mini.project.handler.TaskDeleteCommand;
-import com.mini.project.handler.TaskDetailCommand;
-import com.mini.project.handler.TaskListCommand;
-import com.mini.project.handler.TaskUpdateCommand;
 
 // 클라이언트 요청을 처리할 커맨드 객체를 준비한다.
 public class RequestMappingListener implements ApplicationContextListener {
@@ -40,7 +36,6 @@ public class RequestMappingListener implements ApplicationContextListener {
     List<Board> boardList = (List<Board>) context.get("boardList");
     List<Member> memberList = (List<Member>) context.get("memberList");
     List<Project> projectList = (List<Project>) context.get("projectList");
-    List<Task> taskList = (List<Task>) context.get("taskList");
 
     context.put("/board/add", new BoardAddCommand(boardList));
     context.put("/board/list", new BoardListCommand(boardList));
@@ -60,6 +55,7 @@ public class RequestMappingListener implements ApplicationContextListener {
     context.put("/project/detail", new ProjectDetailCommand(projectList));
     context.put("/project/update", new ProjectUpdateCommand(projectList, memberListCommand));
     context.put("/project/delete", new ProjectDeleteCommand(projectList));
+    context.put("/login", new LogInCommnad(memberList, (Member) context.get("loggedInMember")));
 
     context.put("/hello", new HelloCommand());
 
