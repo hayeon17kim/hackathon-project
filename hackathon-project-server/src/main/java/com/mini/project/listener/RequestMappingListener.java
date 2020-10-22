@@ -12,6 +12,12 @@ import com.mini.project.handler.MemberDeleteCommand;
 import com.mini.project.handler.MemberDetailCommand;
 import com.mini.project.handler.MemberListCommand;
 import com.mini.project.handler.MemberUpdateCommand;
+import com.mini.project.handler.TodoAddCommand;
+import com.mini.project.handler.TodoCheckCommand;
+import com.mini.project.handler.TodoDeleteCommand;
+import com.mini.project.handler.TodoDetailCommand;
+import com.mini.project.handler.TodoListCommand;
+import com.mini.project.handler.TodoUpdateCommand;
 
 // 클라이언트 요청을 처리할 커맨드 객체를 준비한다.
 public class RequestMappingListener implements ApplicationContextListener {
@@ -21,6 +27,7 @@ public class RequestMappingListener implements ApplicationContextListener {
   public void contextInitialized(Map<String,Object> context) {
     // 옵저버가 작업한 결과를 맵에서 꺼낸다.s
     List<Member> memberList = (List<Member>) context.get("memberList");
+    //List<Todo> todoList = (List<Todo>) context.get("todoList");
 
 
     MemberListCommand memberListCommand = new MemberListCommand(memberList);
@@ -30,6 +37,21 @@ public class RequestMappingListener implements ApplicationContextListener {
     context.put("/member/update", new MemberUpdateCommand(memberList));
     context.put("/member/delete", new MemberDeleteCommand(memberList));
 
+    /*
+    context.put("/todo/add", new TodoAddCommand(todoList));
+    context.put("/todo/delete", new TodoDeleteCommand(todoList));
+    context.put("/todo/detail", new TodoDetailCommand(todoList));
+    context.put("/todo/list", new TodoListCommand(todoList));
+    context.put("/todo/update", new TodoUpdateCommand(todoList,memberListCommand));
+    */
+    context.put("/todo/add", new TodoAddCommand());
+    context.put("/todo/delete", new TodoDeleteCommand());
+    context.put("/todo/detail", new TodoDetailCommand());
+    context.put("/todo/list", new TodoListCommand());
+    context.put("/todo/update", new TodoUpdateCommand());
+    context.put("/todo/check", new TodoCheckCommand());
+    
+    
     context.put("/login", new LogInCommand(memberList));
     
     context.put("/main", new MainScreenCommand());

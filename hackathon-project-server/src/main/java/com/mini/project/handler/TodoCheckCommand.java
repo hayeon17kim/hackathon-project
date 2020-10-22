@@ -7,7 +7,7 @@ import com.mini.project.domain.Member;
 import com.mini.project.domain.Todo;
 import com.mini.util.Prompt;
 
-public class TodoDeleteCommand implements Command {
+public class TodoCheckCommand implements Command {
 
   List<Todo> todoList;
 
@@ -21,7 +21,7 @@ public class TodoDeleteCommand implements Command {
   public void execute(PrintWriter out, BufferedReader in, Member loggedInMember) {
     todoList = loggedInMember.getTodoList();
     try {
-      out.println("[스케줄 삭제]");
+      out.println("[스케줄 완료]");
       int no = Prompt.inputInt("번호? ",out ,in);
       int index = indexOf(no);
 
@@ -30,14 +30,14 @@ public class TodoDeleteCommand implements Command {
         return;
       }
 
-      String response = Prompt.inputString("정말 삭제하시겠습니까?(y/N) ", out, in);
+      String response = Prompt.inputString("정말 완료하셨습니까?(y/N) ", out, in);
       if (!response.equalsIgnoreCase("y")) {
-        out.println("작업 삭제를 취소하였습니다.");
+        out.println("작업 완료를 취소하였습니다.");
         return;
       }
 
-      todoList.remove(index);
-      out.println("작업을 삭제하였습니다.");
+      todoList.get(index).setDone(true);;
+      out.println("작업을 체크하였습니다.");
     } catch (Exception e) {
       out.printf("작업 처리 중 오류 발생! - %s\n", e.getMessage());
     }
