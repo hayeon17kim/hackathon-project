@@ -9,6 +9,7 @@ public class Member {
   private String id;
   private String password;
   private List<Todo> TodoList;
+  private int no;
 
   public String getName() {
     return name;

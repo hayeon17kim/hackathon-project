@@ -24,23 +24,10 @@ public class MemberListCommand implements Command {
 
     while (iterator.hasNext()) {
       Member member = iterator.next();
-      out.printf("%d, %s, %s, %s, %s\n",
-          member.getNo(),
+      out.printf("%s, %s\n",
           member.getName(),
-          member.getEmail(),
-          member.getTel(),
-          member.getRegisteredDate());
+          member.getId());
     }
-  }
-
-  public Member findByName(String name) {
-    for (int i = 0; i < memberList.size(); i++) {
-      Member member = memberList.get(i);
-      if (member.getName().equals(name)) {
-        return member;
-      }
-    }
-    return null;
   }
 
 }

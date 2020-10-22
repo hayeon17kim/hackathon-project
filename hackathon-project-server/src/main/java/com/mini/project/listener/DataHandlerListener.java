@@ -51,7 +51,7 @@ public class DataHandlerListener implements ApplicationContextListener {
     context.put("projectList", projectList);
     context.put("taskList", taskList);
     
-    context.put("loggedInMember", null);
+    context.put("loggedInMember", new Member());
   }
 
   @Override

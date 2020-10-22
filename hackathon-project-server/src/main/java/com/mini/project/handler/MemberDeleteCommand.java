@@ -18,8 +18,8 @@ public class MemberDeleteCommand implements Command {
   public void execute(PrintWriter out, BufferedReader in) {
     try {
       out.println("[회원 삭제]");
-      int no = Prompt.inputInt("번호? ", out, in);
-      int index = indexOf(no);
+      String id = Prompt.inputString("아이디? ", out, in);
+      int index = indexOf(id);
 
       if (index == -1) {
         out.println("해당 번호의 회원이 없습니다.");
@@ -40,10 +40,10 @@ public class MemberDeleteCommand implements Command {
     }
   }
 
-  private int indexOf(int no) {
+  private int indexOf(String id) {
     for (int i = 0; i < memberList.size(); i++) {
       Member member = memberList.get(i);
-      if (member.getNo() == no) {
+      if (member.getId().equals(id)) {
         return i;
       }
     }

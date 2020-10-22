@@ -61,12 +61,6 @@ public class RequestMappingListener implements ApplicationContextListener {
     context.put("/project/update", new ProjectUpdateCommand(projectList, memberListCommand));
     context.put("/project/delete", new ProjectDeleteCommand(projectList));
 
-    context.put("/task/add", new TaskAddCommand(taskList, memberListCommand));
-    context.put("/task/list", new TaskListCommand(taskList));
-    context.put("/task/detail", new TaskDetailCommand(taskList));
-    context.put("/task/update", new TaskUpdateCommand(taskList, memberListCommand));
-    context.put("/task/delete", new TaskDeleteCommand(taskList));
-
     context.put("/hello", new HelloCommand());
 
     context.put("/calc", new CalculatorCommand());

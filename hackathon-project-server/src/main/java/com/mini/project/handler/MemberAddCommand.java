@@ -20,13 +20,10 @@ public class MemberAddCommand implements Command {
       out.println("[회원가입]");
 
       Member member = new Member();
-      member.setNo(Prompt.inputInt("번호? ", out, in));
       member.setName(Prompt.inputString("이름? ", out, in));
-      member.setEmail(Prompt.inputString("이메일? ", out, in));
+      member.setId(Prompt.inputString("아이디?", out, in));
       member.setPassword(Prompt.inputString("암호? ", out, in));
-      member.setPhoto(Prompt.inputString("사진? ", out, in));
-      member.setTel(Prompt.inputString("전화? ", out, in));
-      member.setRegisteredDate(new java.sql.Date(System.currentTimeMillis()));
+      
 
       memberList.add(member);
 
