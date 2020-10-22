@@ -48,8 +48,7 @@ public class ClientApp {
       // 메시지 이전 줄에 아이디를 보낸다.
       // clientId.equals("$%$)가 true면 로그아웃된 상태
       // false면 로그인된 상태
-      out.println(clientId);
-      out.println(message);
+      out.println(clientId  + "," + message);
       out.flush();
 
       receiveResponse(out, in);
@@ -77,7 +76,11 @@ public class ClientApp {
       String response = in.readLine();
       if (response.length() == 0) {
         break;
-      } else if (response.equals("!{}!")) {
+      } else if (response.length() > 3 && response.substring(0, 3).equals("$%$")) {
+        clientId = response.substring(3, response.length());
+        System.out.println(clientId);
+        } 
+      else if (response.equals("!{}!")) {
         // 사용자로부터 값을 입력을 받아서 서버에 보낸다.
         out.println(Prompt.inputString(""));
         out.flush(); // 주의! 출력하면 버퍼에 쌓인다. 서버로 보내고 싶다면 flush()를 호출하라!
