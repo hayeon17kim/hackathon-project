@@ -1,9 +1,7 @@
 package com.mini.project.domain;
 
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 //Member 클래스는 더이상 CsvObject를 구현할 필요가 없다.
 //
@@ -12,10 +10,13 @@ public class Member {
   private String id;
   private String password;
   private List<Todo> todoList;
-  private List<Member> friendsList;
+  private List<Message> messageList;
+  private String status = "기본 상태메시지";
   
+   
   public Member() {
     todoList = new ArrayList<>();
+    messageList = new ArrayList<>();
   }
   
   public Member(String name, String id, String password, List<Todo> list) {
@@ -50,12 +51,22 @@ public class Member {
     this.todoList = todoList;
   }
 
-  public List<Member> getFriendsList() {
-    return friendsList;
+  public List<Message> getMessageList() {
+    return messageList;
   }
 
-  public void setFriendsList(List<Member> friendsList) {
-    this.friendsList = friendsList;
+  public void setMessageList(List<Message> messageList) {
+    this.messageList = messageList;
   }
+
+  public String getStatus() {
+    return status;
+  }
+
+  public void setStatus(String status) {
+    this.status = status;
+  }
+  
+  
   
 }

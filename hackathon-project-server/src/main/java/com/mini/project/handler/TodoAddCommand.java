@@ -32,8 +32,8 @@ public class TodoAddCommand implements Command {
         out.println("해당 제목의 작업이 이미 존재합니다.");
         return;
       }
+      
       todo.setDate(Prompt.inputDate("날짜 ?",out ,in));
-      todo.setTitle(Prompt.inputString("할일 ? ",out ,in));
       todo.setContent(Prompt.inputString("내용 ? ",out ,in));
       todo.setCategory(Prompt.inputInt("카테고리?\n1: 어학\n2: 독서\n3: 운동\n4: 코딩\n> ",out ,in));
       todoList.add(todo);

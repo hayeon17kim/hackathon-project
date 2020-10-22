@@ -22,7 +22,6 @@ public class TodoDetailCommand implements Command {
   public void execute(PrintWriter out, BufferedReader in, Member loggedInMember) {
     todoList = loggedInMember.getTodoList();
     try {
-      out.println("[할 일 상세보기]");
       String title = Prompt.inputString("제목", out, in);
       Todo todo = findByTitle(title);
 
@@ -30,10 +29,14 @@ public class TodoDetailCommand implements Command {
         out.println("해당 제목의 작업이 없습니다.");
         return;
       }
+      Picture.getHeader(out);
+      out.printf("     %s     \n", title);
+      Picture.getSingleLine(out);
+      
       Picture.printScreen(out, todo.getCategory());
-
-      out.printf("내용: %s\n", todo.getContent());
-      out.printf("날짜: %s\n", todo.getDate());
+      Picture.getSingleLine(out);
+      out.printf(" 내용 | %s\n", todo.getContent());
+      out.printf(" 날짜 | %s\n", todo.getDate());
       String categories = null;
       switch (todo.getCategory()) {
         case 1:
@@ -51,8 +54,8 @@ public class TodoDetailCommand implements Command {
         default:
           categories = "기타";
       }
-      out.printf("카테고리: %s\n", categories);
-      out.printf("할일: %s\n", todo.getTitle());
+      out.printf(" 항목 | %s\n", categories);
+      Picture.getDoubleLine(out);
     } catch (Exception e) {
       out.printf("작업 처리 중 오류 발생! - %s\n", e.getMessage());
     }

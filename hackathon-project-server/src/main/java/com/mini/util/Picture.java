@@ -5,6 +5,48 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class Picture {
+  
+  
+  public static void getHeader(PrintWriter out) {
+    SimpleDateFormat date1 = new SimpleDateFormat("yyyy-MM-dd");
+    SimpleDateFormat date2 = new SimpleDateFormat("HH : mm");
+
+    Calendar time = Calendar.getInstance();
+    String date = date1.format(time.getTime());
+    String timeNow = date2.format(time.getTime());
+
+    getDoubleLine(out);
+    out.printf("%s          %s\n", date, timeNow);
+    getDoubleLine(out);
+  }
+  
+  public static void printMailBox(PrintWriter out) {
+    out.println("      _________");
+    out.println("    .`.        `.");
+    out.println("   /   \\ .======.\\");
+    out.println("   |   | |______||");
+    out.println("   |   |   _____ |");
+    out.println("   |   |  /    / |");
+    out.println("   |   | /____/  |");
+    out.println("   | _ |         |");
+    out.println("   |/ \\|.-\"```\"-.|");
+    out.println("   `` |||      |||");
+    out.println("      `\"`      `\"");
+    
+  }
+  
+  public static void getSingleLine(PrintWriter out) {
+    out.println("------------------------------");
+  }
+  
+  public static void getDoubleLine(PrintWriter out) {
+    out.println("==============================");
+  }
+  
+  public static void getStarLine(PrintWriter out) {
+    out.println("******************************");
+  }
+  
 
   public static void startScreen() throws InterruptedException {
     System.out.println("===========================================================");

@@ -156,6 +156,7 @@ public class ServerApp {
       Member currentMember = defaultMember;
       if (clientId.equals("$%$")) {
         System.out.println("[로그아웃 상태]");
+        out.println("[로그아웃 상태]");
 
       } else {
         System.out.println("[로그인된 아이디: " + clientId + "]");

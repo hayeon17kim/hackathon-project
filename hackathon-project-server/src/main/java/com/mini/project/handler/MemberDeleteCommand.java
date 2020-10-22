@@ -39,7 +39,7 @@ public class MemberDeleteCommand implements Command {
       out.printf("작업 처리 중 오류 발생! - %s\n", e.getMessage());
     }
   }
-
+  
   private int indexOf(String id) {
     for (int i = 0; i < memberList.size(); i++) {
       Member member = memberList.get(i);
