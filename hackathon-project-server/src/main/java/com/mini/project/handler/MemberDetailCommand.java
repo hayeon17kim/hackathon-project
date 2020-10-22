@@ -15,8 +15,9 @@ public class MemberDetailCommand implements Command {
     this.memberList = list;
   }
 
+  
   @Override
-  public void execute(PrintWriter out, BufferedReader in) {
+  public void execute(PrintWriter out, BufferedReader in, Member loggedInMember) {
     try {
       out.println("[회원 상세보기]");
       String id = Prompt.inputString("아이디? ", out, in);
@@ -48,4 +49,6 @@ public class MemberDetailCommand implements Command {
     }
     return null;
   }
+
+
 }

@@ -6,28 +6,27 @@ import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
-import org.checkerframework.checker.units.qual.s;
 import com.mini.context.ApplicationContextListener;
+import com.mini.project.domain.Member;
 import com.mini.project.handler.Command;
 import com.mini.project.listener.AppInitListener;
 import com.mini.project.listener.DataHandlerListener;
 import com.mini.project.listener.RequestMappingListener;
 
 public class ServerApp {
+  
+  static Member defaultMember = new Member("default", "default", "default");
 
   // 클라이언트가 "stop" 명령을 보내면 이 값이 true로 변경된다.
   // - 이 값이 true 이면 다음 클라이언트 접속할 때 서버를 종료한다.
   static boolean stop = false;
-  static String loggedInId;
 
   // 스레드풀 준비
   ExecutorService threadPool = Executors.newCachedThreadPool();
@@ -64,7 +63,7 @@ public class ServerApp {
 
   public void service(int port) {
     notifyApplicationContextListenerOnServiceStarted();
-    
+
 
 
     try (ServerSocket serverSocket = new ServerSocket(port)) {
@@ -114,7 +113,7 @@ public class ServerApp {
 
   public static void main(String[] args) {
     ServerApp server = new ServerApp();
-    
+
 
     // 리스너(옵저버/구독자) 등록
     server.addApplicationContextListener(new AppInitListener());
@@ -125,7 +124,7 @@ public class ServerApp {
   }
 
   private static void handleClient(Socket clientSocket) {
-    
+
     InetAddress address = clientSocket.getInetAddress();
     System.out.printf("클라이언트(%s)가 연결되었습니다.\n",
         address.getHostAddress());
@@ -134,7 +133,6 @@ public class ServerApp {
         BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         PrintWriter out = new PrintWriter(socket.getOutputStream())) {
 
-      
       // 클라이언트가 보낸 요청을 읽는다.
       String fullRequest = in.readLine();
       String[] requests = fullRequest.split(",");
@@ -148,18 +146,19 @@ public class ServerApp {
         out.flush();
         return;
       }  
-      
+
+      Member currentMember = defaultMember;
       if (clientId.equals("$%$")) {
         System.out.println("[로그아웃 상태]");
+
       } else {
-        loggedInId = clientId;
-        System.out.println("[로그인된 아이디: " + clientId + "]");        
+        System.out.println("[로그인된 아이디: " + clientId + "]");
+        currentMember = whoAreYou(clientId);
       }
-      
       System.out.println("[요청 메시지: " + request + "]");
       Command command = (Command) context.get(request);
       if (command != null) {
-        command.execute(out, in);
+        command.execute(out, in, currentMember);
       } else {
         out.println("해당 명령을 처리할 수 없습니다!");
       }
@@ -177,4 +176,13 @@ public class ServerApp {
         address.getHostAddress());
   }
 
+  public static Member whoAreYou(String clientId) {
+    List<Member> list = (List<Member>) context.get("memberList");
+    for (Member member : list) {
+      if (member.getId().equals(clientId)) {
+        return member;
+      }
+    }
+    return null;
+  }
 }

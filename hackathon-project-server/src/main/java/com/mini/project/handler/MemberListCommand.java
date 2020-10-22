@@ -15,7 +15,7 @@ public class MemberListCommand implements Command {
   }
 
   @Override
-  public void execute(PrintWriter out, BufferedReader in) {
+  public void execute(PrintWriter out, BufferedReader in, Member loggedInMember) {
     out.println("[회원 목록]");
 
     // 전체 목록을 조회할 때 `Iterator` 객체를 사용한다.

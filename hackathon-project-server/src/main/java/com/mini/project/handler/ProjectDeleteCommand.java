@@ -15,7 +15,7 @@ public class ProjectDeleteCommand implements Command {
   }
 
   @Override
-  public void execute(PrintWriter out, BufferedReader in) {
+  public void execute(PrintWriter out, BufferedReader in, Member loggedInMember) {
     try {
       out.println("[프로젝트 삭제]");
       int no = Prompt.inputInt("번호? ", out, in);

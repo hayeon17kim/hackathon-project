@@ -38,10 +38,12 @@ public class DataHandlerListener implements ApplicationContextListener {
   public void contextInitialized(Map<String,Object> context) {
     // 애플리케이션의 서비스가 시작되면 먼저 파일에서 데이터를 로딩한다.
     // 파일에서 데이터 로딩
-    loadData(boardList, boardFile, Board[].class);
     loadData(memberList, memberFile, Member[].class);
     loadData(projectList, projectFile, Project[].class);
-    loadData(taskList, taskFile, Task[].class);
+    
+    
+    memberList.add(new Member("hayeon", "hayeon", "1111"));
+    memberList.add(new Member("hyuk", "hyuk", "1111"));
 
     // 옵저버가 파일에서 데이터(게시글,회원,프로젝트,작업)를 읽어
     // List 컬렉션에 저장한 다음,

@@ -1,4 +1,4 @@
-package com.mini.project;
+package com.mini.util;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -47,7 +47,6 @@ public class Picture {
 
     System.out.println("===================================");
     System.out.printf("%s                 %s\n", date, timeNow);
-    Thread.sleep(300);
     System.out.println("===================================");
     System.out.println("           \\  ,  /");
     Thread.sleep(300);
@@ -59,11 +58,10 @@ public class Picture {
     Thread.sleep(300);
     System.out.println("       . `   \\ /   ` .");
     System.out.println("            /  `  \\");
-    Thread.sleep(300);
-    System.out.println("===================================");
-    System.out.println("===================================");
-    System.out.println("===================================");
   }
+  
+  
+  
   public static void mainNight() throws InterruptedException {
     SimpleDateFormat date1 = new SimpleDateFormat("yyyy-MM-dd");
     SimpleDateFormat date2 = new SimpleDateFormat("HH : mm");

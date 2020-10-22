@@ -9,6 +9,15 @@ public class Todo {
   private String content;
   private boolean isDone = false;
   private Category category;
+  
+  
+  public Todo () {
+    Todo test = new Todo();
+    test.title = "스레드풀 공부";
+    test.date = Date.valueOf("2020-10-20");
+    test.content = "자바";
+    test.category = Category.coding;
+  }
 
 
   enum Category {
@@ -42,6 +51,7 @@ public class Todo {
 
 
   // 테스트
+  /*
   public static void main(String[] args) {
     Todo test = new Todo();
     test.title = "스레드풀 공부";
@@ -51,5 +61,6 @@ public class Todo {
 
     System.out.println(test);
   }
+  */
 
 }

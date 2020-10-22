@@ -7,14 +7,11 @@ import com.mini.project.domain.Board;
 import com.mini.project.domain.Member;
 import com.mini.project.domain.Project;
 import com.mini.project.domain.Task;
-import com.mini.project.handler.BoardAddCommand;
-import com.mini.project.handler.BoardDeleteCommand;
-import com.mini.project.handler.BoardDetailCommand;
-import com.mini.project.handler.BoardListCommand;
-import com.mini.project.handler.BoardUpdateCommand;
+
 import com.mini.project.handler.CalculatorCommand;
 import com.mini.project.handler.HelloCommand;
 import com.mini.project.handler.LogInCommand;
+import com.mini.project.handler.MainScreenCommand;
 import com.mini.project.handler.MemberAddCommand;
 import com.mini.project.handler.MemberDeleteCommand;
 import com.mini.project.handler.MemberDetailCommand;
@@ -32,16 +29,10 @@ public class RequestMappingListener implements ApplicationContextListener {
   @SuppressWarnings("unchecked")
   @Override
   public void contextInitialized(Map<String,Object> context) {
-    // 옵저버가 작업한 결과를 맵에서 꺼낸다.
-    List<Board> boardList = (List<Board>) context.get("boardList");
+    // 옵저버가 작업한 결과를 맵에서 꺼낸다.s
     List<Member> memberList = (List<Member>) context.get("memberList");
     List<Project> projectList = (List<Project>) context.get("projectList");
 
-    context.put("/board/add", new BoardAddCommand(boardList));
-    context.put("/board/list", new BoardListCommand(boardList));
-    context.put("/board/detail", new BoardDetailCommand(boardList));
-    context.put("/board/update", new BoardUpdateCommand(boardList));
-    context.put("/board/delete", new BoardDeleteCommand(boardList));
 
     MemberListCommand memberListCommand = new MemberListCommand(memberList);
     context.put("/member/add", new MemberAddCommand(memberList));
@@ -55,7 +46,9 @@ public class RequestMappingListener implements ApplicationContextListener {
     context.put("/project/detail", new ProjectDetailCommand(projectList));
     context.put("/project/update", new ProjectUpdateCommand(projectList, memberListCommand));
     context.put("/project/delete", new ProjectDeleteCommand(projectList));
-    context.put("/login", new LogInCommand(memberList, (Member) context.get("loggedInMember")));
+    context.put("/login", new LogInCommand(memberList));
+    
+    context.put("/main", new MainScreenCommand());
 
     context.put("/hello", new HelloCommand());
 

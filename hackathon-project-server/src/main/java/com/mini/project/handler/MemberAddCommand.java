@@ -15,7 +15,7 @@ public class MemberAddCommand implements Command {
   }
 
   @Override
-  public void execute(PrintWriter out, BufferedReader in) {
+  public void execute(PrintWriter out, BufferedReader in, Member loggedInMember) {
     try {
       out.println("[회원가입]");
 
@@ -31,4 +31,5 @@ public class MemberAddCommand implements Command {
       out.printf("작업 처리 중 오류 발생! - %s\n", e.getMessage());
     }
   }
+
 }

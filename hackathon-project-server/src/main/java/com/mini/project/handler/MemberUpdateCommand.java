@@ -15,7 +15,7 @@ public class MemberUpdateCommand implements Command {
   }
 
   @Override
-  public void execute(PrintWriter out, BufferedReader in) {
+  public void execute(PrintWriter out, BufferedReader in, Member loggedInMember) {
     try {
       out.println("[회원 변경]");
       String id = Prompt.inputString("번호? ", out, in);

@@ -9,17 +9,15 @@ import com.mini.util.Prompt;
 public class LogInCommand implements Command {
   
   List<Member> memberList;
-  Member loggedInMember;
 
-  public LogInCommand(List<Member> list, Member member) {
+  public LogInCommand(List<Member> list) {
     this.memberList = list;
-    this.loggedInMember = member;
   }
 
   @Override
-  public void execute(PrintWriter out, BufferedReader in) {
+  public void execute(PrintWriter out, BufferedReader in, Member member) {
     try {
-      loggedInMember = logIn(out, in);      
+      logIn(out, in);      
     } catch (Exception e) {
       e.printStackTrace();
     }

@@ -1,5 +1,6 @@
 package com.mini.project.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 //Member 클래스는 더이상 CsvObject를 구현할 필요가 없다.
@@ -8,8 +9,19 @@ public class Member {
   private String name;
   private String id;
   private String password;
-  private List<Todo> TodoList;
-  private int no;
+  private List<Todo> todoList;
+  
+  public Member() {
+    
+  }
+  
+  public Member(String name, String id, String password) {
+    this.name = name;
+    this.id = id;
+    this.password = password;
+    this.todoList = new ArrayList<Todo>();
+    //todoList.add(new Todo());
+  }
 
   public String getName() {
     return name;
@@ -30,9 +42,9 @@ public class Member {
     this.password = password;
   }
   public List<Todo> getTodoList() {
-    return TodoList;
+    return todoList;
   }
   public void setTodoList(List<Todo> todoList) {
-    TodoList = todoList;
+    this.todoList = todoList;
   }
 }
