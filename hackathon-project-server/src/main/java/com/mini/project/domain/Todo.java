@@ -3,10 +3,6 @@ package com.mini.project.domain;
 import java.sql.Date;
 
 public class Todo {
-
-  // Map<Date, List<Todo>>
-  
-  private int no;
   private Date date;
   private String title;
   private String content;
@@ -69,12 +65,5 @@ public class Todo {
 
   public void setCategory(int category) {
     this.category = category;
-  }
-  public int getNo() {
-    return no;
-  }
-
-  public void setNo(int no) {
-    this.no = no;
   }
 }

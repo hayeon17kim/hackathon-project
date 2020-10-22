@@ -19,6 +19,7 @@ import com.mini.project.handler.TodoCheckCommand;
 import com.mini.project.handler.TodoDeleteCommand;
 import com.mini.project.handler.TodoDetailCommand;
 import com.mini.project.handler.TodoListCommand;
+import com.mini.project.handler.TodoUnCheckCommand;
 import com.mini.project.handler.TodoUpdateCommand;
 
 // 클라이언트 요청을 처리할 커맨드 객체를 준비한다.
@@ -44,6 +45,7 @@ public class RequestMappingListener implements ApplicationContextListener {
     context.put("/todo/list", new TodoListCommand());
     context.put("/todo/update", new TodoUpdateCommand());
     context.put("/todo/check", new TodoCheckCommand());
+    context.put("/todo/uncheck", new TodoUnCheckCommand());
     
     context.put("/login", new LogInCommand(memberList));
     context.put("/logout", new LogOutCommand());

@@ -7,7 +7,7 @@ import com.mini.project.domain.Member;
 import com.mini.project.domain.Todo;
 import com.mini.util.Prompt;
 
-public class TodoCheckCommand implements Command {
+public class TodoUnCheckCommand implements Command {
 
   List<Todo> todoList;
 
@@ -21,7 +21,7 @@ public class TodoCheckCommand implements Command {
   public void execute(PrintWriter out, BufferedReader in, Member loggedInMember) {
     todoList = loggedInMember.getTodoList();
     try {
-      out.println("[한 일 체크]");
+      out.println("[한 일 체크 해제]");
       String title = Prompt.inputString("제목? ", out, in);
       int index = indexOf(title);
 
@@ -30,8 +30,8 @@ public class TodoCheckCommand implements Command {
         return;
       }
 
-      todoList.get(index).setDone(true);;
-      out.println("작업이 체크되었습니다.");
+      todoList.get(index).setDone(false);;
+      out.println("작업이 체크 해제되었습니다.");
     } catch (Exception e) {
       out.printf("작업 처리 중 오류 발생! - %s\n", e.getMessage());
     }
