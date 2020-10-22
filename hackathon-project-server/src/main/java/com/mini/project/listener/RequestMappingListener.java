@@ -12,6 +12,7 @@ import com.mini.project.handler.MemberDeleteCommand;
 import com.mini.project.handler.MemberDetailCommand;
 import com.mini.project.handler.MemberListCommand;
 import com.mini.project.handler.MemberUpdateCommand;
+import com.mini.project.handler.ReportCommand;
 import com.mini.project.handler.TodoAddCommand;
 import com.mini.project.handler.TodoCheckCommand;
 import com.mini.project.handler.TodoDeleteCommand;
@@ -51,10 +52,10 @@ public class RequestMappingListener implements ApplicationContextListener {
     context.put("/todo/update", new TodoUpdateCommand());
     context.put("/todo/check", new TodoCheckCommand());
     
-    
     context.put("/login", new LogInCommand(memberList));
     
     context.put("/main", new MainScreenCommand());
+    context.put("/report", new ReportCommand());
 
     context.put("/hello", new HelloCommand());
 

@@ -24,7 +24,6 @@ public class ServerApp {
   
   static Member defaultMember = new Member("default", "default", "default", null);
   
-
   // 클라이언트가 "stop" 명령을 보내면 이 값이 true로 변경된다.
   // - 이 값이 true 이면 다음 클라이언트 접속할 때 서버를 종료한다.
   static boolean stop = false;
