@@ -19,12 +19,12 @@ public class ReportCommand implements Command {
       out.println("===================================");
       out.printf("       %s님의 리포트       \n", member.getName());
       out.println("===================================");
-      out.println("-----------------------------------");
       out.printf("  '%s'을 가장 많이하셨네요!\n", categoryString(calcBest(rates)));
       out.println("-----------------------------------");
       printScreen(out, calcBest(rates));      
       out.println("-----------------------------------");
       out.printf("  '%s'은 좀 더 분발하셔야겠어요.\n", categoryString(calcWorst(rates)));
+      out.println("-----------------------------------");
       printScreen(out, calcWorst(rates));
       out.println("-----------------------------------");
       printGraph(out, rates);

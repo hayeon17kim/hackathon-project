@@ -12,14 +12,7 @@ public class TodoUpdateCommand implements Command {
 
   List<Todo> todoList;
   MemberListCommand memberListCommand;
-
-  /*
-  public TodoUpdateCommand(List<Todo> list, MemberListCommand memberListCommand) {
-    this.todoList = list;
-    this.memberListCommand = memberListCommand;
-  }
-  */
-
+  
   @Override
   public void execute(PrintWriter out, BufferedReader in, Member loggedInMember) {
     todoList = loggedInMember.getTodoList();
@@ -32,11 +25,6 @@ public class TodoUpdateCommand implements Command {
         out.println("해당 번호의 작업이 없습니다.");
         return;
       }
-
-      //    boolean isdone = Prompt.inputString("완료?");
-      //    if (done.equalsIgnoreCase("yes")) {
-      //      todo.setDone(isDone) = true;
-      //    }
       String content = Prompt.inputString(
           String.format("내용(%s)? ", todo.getContent()),out ,in);
       Date deadline = Prompt.inputDate(
@@ -59,7 +47,7 @@ public class TodoUpdateCommand implements Command {
           categories = "기타";
       }
       int newCategories = Prompt.inputInt(
-          String.format("카테고리?\n1: 어학\n2: 독서\n3: 운동\n4: 코딩\n> ", categories, out ,in));
+          String.format("카테고리?\n1: 어학\n2: 독서\n3: 운동\n4: 코딩\n> ", categories), out ,in);
 
       //    String owner = null;
       //    while (true) {

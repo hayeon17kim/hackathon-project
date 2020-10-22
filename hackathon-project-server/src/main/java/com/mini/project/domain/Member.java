@@ -10,6 +10,7 @@ public class Member {
   private String id;
   private String password;
   private List<Todo> todoList;
+  private List<Member> friendsList;
   
   public Member() {
     todoList = new ArrayList<>();
@@ -46,4 +47,13 @@ public class Member {
   public void setTodoList(List<Todo> todoList) {
     this.todoList = todoList;
   }
+
+  public List<Member> getFriendsList() {
+    return friendsList;
+  }
+
+  public void setFriendsList(List<Member> friendsList) {
+    this.friendsList = friendsList;
+  }
+  
 }
