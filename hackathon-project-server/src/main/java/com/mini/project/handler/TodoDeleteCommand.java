@@ -22,11 +22,11 @@ public class TodoDeleteCommand implements Command {
     todoList = loggedInMember.getTodoList();
     try {
       out.println("[스케줄 삭제]");
-      int no = Prompt.inputInt("번호? ",out ,in);
-      int index = indexOf(no);
+      String title = Prompt.inputString("제목? ",out ,in);
+      int index = indexOf(title);
 
       if (index == -1) {
-        out.println("해당 번호의 작업이 없습니다.");
+        out.println("해당 제목의 작업이 없습니다.");
         return;
       }
 
@@ -43,10 +43,10 @@ public class TodoDeleteCommand implements Command {
     }
   }
 
-  private int indexOf(int no) {
+  private int indexOf(String title) {
     for (int i = 0; i < todoList.size(); i++) {
       Todo todo = todoList.get(i);
-      if (todo.getNo() == no) {
+      if (todo.getTitle().equals(title)) {
         return i;
       }
     }

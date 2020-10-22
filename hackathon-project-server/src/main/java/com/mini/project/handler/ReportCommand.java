@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.util.List;
 import com.mini.project.domain.Member;
 import com.mini.project.domain.Todo;
+import com.mini.util.Picture;
 
 public class ReportCommand implements Command {
   int[] counts = new int[4];
@@ -21,11 +22,11 @@ public class ReportCommand implements Command {
       out.println("===================================");
       out.printf("  '%s'을 가장 많이하셨네요!\n", categoryString(calcBest(rates)));
       out.println("-----------------------------------");
-      printScreen(out, calcBest(rates));      
+      Picture.printScreen(out, calcBest(rates));      
       out.println("-----------------------------------");
       out.printf("  '%s'은 좀 더 분발하셔야겠어요.\n", categoryString(calcWorst(rates)));
       out.println("-----------------------------------");
-      printScreen(out, calcWorst(rates));
+      Picture.printScreen(out, calcWorst(rates));
       out.println("-----------------------------------");
       printGraph(out, rates);
       out.println("-----------------------------------");
@@ -109,50 +110,5 @@ public class ReportCommand implements Command {
     out.println();
   }
   
-
-  
-  public void printScreen(PrintWriter out, int category) {
-    switch (category) {
-      case 1: 
-        out.println(" Blah!");
-        out.println("  Blah!      _'._|\\\\/: ");
-        out.println("  .          '- '   /_   ");
-        out.println("    \\       _/,    \"_< ");
-        out.println("     \\__   '._____  _)\\");
-        out.println("       —        _/ /    ");
-        out.println("               `;—:     ");
-        out.println("              _ _ :|_\\: ");
-        break;
-      case 2:
-        out.println("     ______ ______");
-        out.println("    _/      Y      \\_");
-        out.println("   // ~~ ~~ | ~~ ~  \\\\");
-        out.println("  // ~ ~ ~~ | ~~~ ~~ \\\\ ");
-        out.println(" //________.|.________\\\\    ");
-        out.println("`----------`-'----------'");
-        break;
-      case 3:
-        out.println("            _( }");
-        out.println("   -=  _  <<  \\");
-        out.println("      `.\\__/`/\\\\");
-        out.println(" -=     '--'\\\\  `");
-        out.println("      -=    //");
-        out.println("jgs         \\)");
-        break;
-      case 4:
-        out.println("         .-----.");
-        out.println("        |.-----.|");
-        out.println("        ||x . x||");
-        out.println("        ||_.-._||");
-        out.println("        `--)-(--`");
-        out.println("       __[=== o]___\'");
-        out.println("       |:::::::::::|\'");
-        out.println("       `-=========-`()");
-        break;
-
-        
-        
-    }
-  }
 
 }

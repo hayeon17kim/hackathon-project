@@ -1,5 +1,6 @@
 package com.mini.util;
 
+import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -131,5 +132,48 @@ public class Picture {
   }
 
 
+  public static void printScreen(PrintWriter out, int category) {
+    switch (category) {
+      case 1: 
+        out.println(" Blah!");
+        out.println("  Blah!      _'._|\\\\/: ");
+        out.println("  .          '- '   /_   ");
+        out.println("    \\       _/,    \"_< ");
+        out.println("     \\__   '._____  _)\\");
+        out.println("       —        _/ /    ");
+        out.println("               `;—:     ");
+        out.println("              _ _ :|_\\: ");
+        break;
+      case 2:
+        out.println("     ______ ______");
+        out.println("    _/      Y      \\_");
+        out.println("   // ~~ ~~ | ~~ ~  \\\\");
+        out.println("  // ~ ~ ~~ | ~~~ ~~ \\\\ ");
+        out.println(" //________.|.________\\\\    ");
+        out.println("`----------`-'----------'");
+        break;
+      case 3:
+        out.println("            _( }");
+        out.println("   -=  _  <<  \\");
+        out.println("      `.\\__/`/\\\\");
+        out.println(" -=     '--'\\\\  `");
+        out.println("      -=    //");
+        out.println("jgs         \\)");
+        break;
+      case 4:
+        out.println("         .-----.");
+        out.println("        |.-----.|");
+        out.println("        ||x . x||");
+        out.println("        ||_.-._||");
+        out.println("        `--)-(--`");
+        out.println("       __[=== o]___\'");
+        out.println("       |:::::::::::|\'");
+        out.println("       `-=========-`()");
+        break;
+
+        
+        
+    }
+  }
 
 }

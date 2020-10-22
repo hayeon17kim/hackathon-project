@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.util.List;
 import com.mini.project.domain.Member;
 import com.mini.project.domain.Todo;
+import com.mini.util.Picture;
 import com.mini.util.Prompt;
 
 public class TodoDetailCommand implements Command {
@@ -22,13 +23,14 @@ public class TodoDetailCommand implements Command {
     todoList = loggedInMember.getTodoList();
     try {
       out.println("[할 일 상세보기]");
-      int no = Prompt.inputInt("번호? ", out, in);
-      Todo todo = findByNo(no);
+      String title = Prompt.inputString("제목", out, in);
+      Todo todo = findByTitle(title);
 
       if (todo == null) {
-        out.println("해당 번호의 작업이 없습니다.");
+        out.println("해당 제목의 작업이 없습니다.");
         return;
       }
+      Picture.printScreen(out, todo.getCategory());
 
       out.printf("내용: %s\n", todo.getContent());
       out.printf("날짜: %s\n", todo.getDate());
@@ -56,10 +58,10 @@ public class TodoDetailCommand implements Command {
     }
   }
 
-  private Todo findByNo(int no) {
+  private Todo findByTitle(String title) {
     for (int i = 0; i < todoList.size(); i++) {
       Todo todo = todoList.get(i);
-      if (todo.getNo() == no) {
+      if (todo.getTitle().equals(title)) {
         return todo;
       }
     }

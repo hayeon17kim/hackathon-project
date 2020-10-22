@@ -25,18 +25,17 @@ public class TodoAddCommand implements Command {
       out.println("[스케쥴 등록]");
 
       Todo todo = new Todo();
-      todo.setNo(Prompt.inputInt("번호? ", out, in));
-      int index = indexOf(todo.getNo());
+      todo.setTitle(Prompt.inputString("제목? ", out, in));
+      int index = indexOf(todo.getTitle());
 
       if (index == 0) {
-        out.println("해당 번호의 작업이 이미 존재합니다.");
+        out.println("해당 제목의 작업이 이미 존재합니다.");
         return;
       }
       todo.setDate(Prompt.inputDate("날짜 ?",out ,in));
       todo.setTitle(Prompt.inputString("할일 ? ",out ,in));
       todo.setContent(Prompt.inputString("내용 ? ",out ,in));
       todo.setCategory(Prompt.inputInt("카테고리?\n1: 어학\n2: 독서\n3: 운동\n4: 코딩\n> ",out ,in));
-      todo.setRegisteredDate(new Date(System.currentTimeMillis()));
       todoList.add(todo);
     }catch (Exception e) {
       out.printf("작업 처리 중 오류 발생! - %s\n", e.getMessage());
@@ -44,10 +43,10 @@ public class TodoAddCommand implements Command {
 
     out.println("스케줄을 등록하였습니다.");
   }
-  private int indexOf(int no) {
+  private int indexOf(String title) {
     for (int i = 0; i < todoList.size(); i++) {
       Todo todo = todoList.get(i);
-      if (todo.getNo() == no) {
+      if (todo.getTitle().equals(title)) {
         return i;
       }
     }

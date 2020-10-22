@@ -138,6 +138,12 @@ public class ServerApp {
       String[] requests = fullRequest.split(",");
       String clientId = requests[0];
       String request = requests[1];
+      /*
+      String[] body = requests[1].split("/");
+      String request = "/" + body[0] + "/" + body[1];
+      String detail = body[2];
+      */
+
 
       if (request.equalsIgnoreCase("stop")) {
         stop = true; // 서버의 상태를 멈추라는 의미로 true로 설정한다.
