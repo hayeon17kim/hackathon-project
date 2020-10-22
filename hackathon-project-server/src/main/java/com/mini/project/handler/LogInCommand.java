@@ -18,34 +18,41 @@ public class LogInCommand implements Command {
 
   @Override
   public void execute(PrintWriter out, BufferedReader in) {
-    loggedInMember = logIn();
-  }
-  
-  public Member logIn() {
-    System.out.println("아이디와 비밀번호를 입력해주세요. ");
-    System.out.println("아이디에 빈 문자열을 입력하시면 취소됩니다.");
-    while (true) {
-      String Id = Prompt.inputString("아이디: ");
-      if (Id.equals(""))
-        return null;
-
-      String password = Prompt.inputString("비밀번호: ");
-
-      if (findById(Id) == null) {
-        System.out.println("아이디를 찾을 수 없습니다.");
-
-      } else if (!findById(Id).getPassword().equals(password)) {
-        System.out.println("비밀번호가 틀렸습니다.");
-      } else {
-        return findById(Id);
-      }
+    try {
+      loggedInMember = logIn(out, in);      
+    } catch (Exception e) {
+      e.printStackTrace();
     }
   }
   
-  public Member findById(String Id) {
+  public Member logIn(PrintWriter out, BufferedReader in) throws Exception {
+      out.println("아이디와 비밀번호를 입력해주세요. ");
+      out.println("아이디에 빈 문자열을 입력하시면 취소됩니다.");
+      while (true) {
+        String id = Prompt.inputString("아이디: ", out, in);
+        if (id.equals(""))
+          return null;
+        
+        String password = Prompt.inputString("비밀번호: ", out, in);
+        
+        if (findById(id) == null) {
+          out.println("아이디를 찾을 수 없습니다.");
+          
+        } else if (!findById(id).getPassword().equals(password)) {
+          out.println("비밀번호가 틀렸습니다.");
+        } else {
+          out.println("$%$" +  id);
+          out.println();
+          out.flush();
+          return findById(id);
+        }
+      }
+  }
+  
+  public Member findById(String id) {
     for (int i = 0; i < memberList.size(); i++) {
       Member member = memberList.get(i);
-      if (member.getId().equals(Id)) {
+      if (member.getId().equals(id)) {
         return member;
       }
     }

@@ -27,6 +27,7 @@ public class ServerApp {
   // 클라이언트가 "stop" 명령을 보내면 이 값이 true로 변경된다.
   // - 이 값이 true 이면 다음 클라이언트 접속할 때 서버를 종료한다.
   static boolean stop = false;
+  static String loggedInId;
 
   // 스레드풀 준비
   ExecutorService threadPool = Executors.newCachedThreadPool();
@@ -125,7 +126,6 @@ public class ServerApp {
 
   private static void handleClient(Socket clientSocket) {
     
-
     InetAddress address = clientSocket.getInetAddress();
     System.out.printf("클라이언트(%s)가 연결되었습니다.\n",
         address.getHostAddress());
@@ -134,8 +134,12 @@ public class ServerApp {
         BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         PrintWriter out = new PrintWriter(socket.getOutputStream())) {
 
+      
       // 클라이언트가 보낸 요청을 읽는다.
-      String request = in.readLine();
+      String fullRequest = in.readLine();
+      String[] requests = fullRequest.split(",");
+      String clientId = requests[0];
+      String request = requests[1];
 
       if (request.equalsIgnoreCase("stop")) {
         stop = true; // 서버의 상태를 멈추라는 의미로 true로 설정한다.
@@ -143,8 +147,16 @@ public class ServerApp {
         out.println();
         out.flush();
         return;
+      }  
+      
+      if (clientId.equals("$%$")) {
+        System.out.println("[로그아웃 상태]");
+      } else {
+        loggedInId = clientId;
+        System.out.println("[로그인된 아이디: " + clientId + "]");        
       }
-
+      
+      System.out.println("[요청 메시지: " + request + "]");
       Command command = (Command) context.get(request);
       if (command != null) {
         command.execute(out, in);
@@ -158,9 +170,11 @@ public class ServerApp {
 
     } catch (Exception e) {
       System.out.println("클라이언트와의 통신 오류!");
+      e.printStackTrace();
     }
 
     System.out.printf("클라이언트(%s)와의 연결을 끊었습니다.\n",
         address.getHostAddress());
   }
+
 }
