@@ -18,20 +18,28 @@ public class MainScreenCommand implements Command {
   
   @Override
   public void execute(PrintWriter out, BufferedReader in, Member member) {
+    SimpleDateFormat date1 = new SimpleDateFormat("yyyy-MM-dd");
+    SimpleDateFormat date2 = new SimpleDateFormat("HH : mm");
+
+    Calendar time = Calendar.getInstance();
+    String date = date1.format(time.getTime());
+    String timeNow = date2.format(time.getTime());
+
+
+    out.println("==============================");
+    out.printf("%s          %s\n", date, timeNow);
+    out.println("==============================");
+    getTimeScreen(out, in, timeNow);
     out.println("============================");
-    SimpleDateFormat simpl = new SimpleDateFormat("yyyy-mm-dd                        hh:mm");
+    out.printf("%s님, 총 %d개의 할 일이 남았습니다.\n", member.getName(), member.getTodoList().size());
     out.println("============================");
     
+    for (Todo todo : member.getTodoList()) {
+      out.println(todo);
+    }
     
-    out.println("아스키아트 나오는 곳");
-    out.println("명언 랜덤으로 나오는 곳");
-    out.printf("%s님, 총 %d개의 할 일이 남았습니다.", member.getName(), member.getTodoList().size());
+    out.println("============================");
     
-    Date date = new Date();
-    System.out.println(date);
-    
-    String s = simpl.format(date);
-    System.out.println("date: " + s);
   }
   
   public int calcHowManyTodo(List<Todo> list) {
@@ -41,8 +49,24 @@ public class MainScreenCommand implements Command {
   }
   
   
-  public void list() {
-    System.out.println();
+  public void getTimeScreen(PrintWriter out, BufferedReader in, String timeNow) {
+    int hour = Integer.parseInt(timeNow.substring(0, 2));
+    if (hour < 15) {
+      out.println("           \\  ,  /");
+      out.println("        ' ,___/_\\___, '");
+      out.println("          \\ /o.o\\ /");
+      out.println("      -=   > \\__/ <   =-");
+      out.println("          /_\\___/_\\");
+      out.println("       . `   \\ /   ` .");
+      out.println("            /  `  \\");
+    } else {
+      out.println("              ___");
+      out.println("      ~*    .'`  _\\");
+      out.println("           /  (o/       *");
+      out.println("*         |      _\\           *");
+      out.println("           \\  '==.    *");
+      out.println("        *   '.____\\       ~*");
+    }
   }
   
   public static void mainMorning() throws InterruptedException {
@@ -54,18 +78,5 @@ public class MainScreenCommand implements Command {
     String timeNow = date2.format(time.getTime());
 
 
-    System.out.println("===================================");
-    System.out.printf("%s                 %s\n", date, timeNow);
-    System.out.println("===================================");
-    System.out.println("           \\  ,  /");
-    Thread.sleep(300);
-    System.out.println("        ' ,___/_\\___, '");
-    System.out.println("          \\ /o.o\\ /");
-    Thread.sleep(300);
-    System.out.println("      -=   > \\__/ <   =-");
-    System.out.println("          /_\\___/_\\");
-    Thread.sleep(300);
-    System.out.println("       . `   \\ /   ` .");
-    System.out.println("            /  `  \\");
   }
 }
