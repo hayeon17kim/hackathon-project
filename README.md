@@ -7,7 +7,22 @@
 ### 2020-10-21
 #### 기획
 
+**Command List**
+* Member
+ /member/add    - 새로운 회원가입을 받는다.
+ /member/list   - 가입된 회원 정보를 본다. (Command 클래스에 Member 을 받으며 로그인을 하지 않으면 사용 할수 없다.)
+ /member/detail - 아이디 정보를 입력하여 회원정보를 간략히 출력해준다.
+ /member/update - 아이디 입력으로 회원정보를 수정할 수 있다.
+ /member/delete - 회원정보를 삭제할 수 있다.
+ 
+* Todo
+ /todo/add      - 스케줄을 추가할수 있다.
+ /todo/delete   - 이미 등록된 스케줄을 삭제할 수 있다.
+ /todo/detail   - 등록된 스케줄의 상세정보를 확인할 수 있다.
+ /todo/list     - 스케줄 정보를 현재 날짜에 맞추어 출력해 준다.
+ 
 **메인 화면**
+
 
 - 현재 시스템의 날짜와 시간을 출력합니다.
 - 현재 시스템의 시간 정보에 맞게 아스키 아트를 출력합니다.
@@ -33,4 +48,5 @@
 ![image](https://user-images.githubusercontent.com/50407047/96745057-aa05e280-1400-11eb-8448-83fec3f4f148.png)
 
 ![image](https://user-images.githubusercontent.com/50407047/96745158-c99d0b00-1400-11eb-9314-ddd14f6392ac.png)
+
 
