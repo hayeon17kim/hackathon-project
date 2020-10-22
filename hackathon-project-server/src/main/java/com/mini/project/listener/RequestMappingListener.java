@@ -6,6 +6,7 @@ import com.mini.context.ApplicationContextListener;
 import com.mini.project.domain.Member;
 import com.mini.project.handler.HelloCommand;
 import com.mini.project.handler.LogInCommand;
+import com.mini.project.handler.LogOutCommand;
 import com.mini.project.handler.MainScreenCommand;
 import com.mini.project.handler.MemberAddCommand;
 import com.mini.project.handler.MemberDeleteCommand;
@@ -53,6 +54,7 @@ public class RequestMappingListener implements ApplicationContextListener {
     context.put("/todo/check", new TodoCheckCommand());
     
     context.put("/login", new LogInCommand(memberList));
+    context.put("/logout", new LogOutCommand());
     
     context.put("/main", new MainScreenCommand());
     context.put("/report", new ReportCommand());
