@@ -39,7 +39,7 @@ public class RequestMappingListener implements ApplicationContextListener {
     //List<Todo> todoList = (List<Todo>) context.get("todoList");
 
     MemberListCommand memberListCommand = new MemberListCommand(memberList);
-    context.put("/member/add", new MemberAddCommand(memberList));
+    context.put("/signup", new MemberAddCommand(memberList));
     context.put("/member/list", memberListCommand);
     context.put("/member/detail", new MemberDetailCommand(memberList));
     context.put("/member/update", new MemberUpdateCommand(memberList));

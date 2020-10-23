@@ -30,7 +30,8 @@ public class TodoCheckCommand implements Command {
         return;
       }
 
-      todoList.get(index).setDone(true);;
+      todoList.get(index).setDone(true);
+      
       out.println("작업이 체크되었습니다.");
     } catch (Exception e) {
       out.printf("작업 처리 중 오류 발생! - %s\n", e.getMessage());
