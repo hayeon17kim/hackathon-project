@@ -24,13 +24,13 @@
 - 특정 날짜로 일정 검색
 - 메세지 기능을 통해 회원과 회원 사이의 소통 활성화
 
-![image](https://user-images.githubusercontent.com/50407047/96745433-18e33b80-1401-11eb-8556-57512df9b50f.png)
+![image](https://user-images.githubusercontent.com/68311187/96958390-4088ef80-1538-11eb-8ba2-35d5d809320f.png)
 
-![image](https://user-images.githubusercontent.com/50407047/96745570-3ca68180-1401-11eb-96f3-e4f8d01838f5.png)
+![image](https://user-images.githubusercontent.com/68311187/96958261-e25c0c80-1537-11eb-90cf-59077791232e.png)
 
-![image](https://user-images.githubusercontent.com/50407047/96957375-65c82e80-1535-11eb-8dc7-233b199611f2.png)
+![image](https://user-images.githubusercontent.com/68311187/96958320-03bcf880-1538-11eb-9351-867d8ba16b25.png)
 
-![image](https://user-images.githubusercontent.com/50407047/96957429-8b553800-1535-11eb-8a92-2e5f73c7b157.png)
+![image](https://user-images.githubusercontent.com/68311187/96958360-23ecb780-1538-11eb-9fcf-2e55c64ba12c.png)
 
 ## 🗣️ Command
 
@@ -92,9 +92,6 @@
 ![image](https://user-images.githubusercontent.com/68311187/96948918-aa49cf00-1521-11eb-8e15-cf5eaab6f65b.png)
 
 ![image](https://user-images.githubusercontent.com/68311187/96949020-ec731080-1521-11eb-9c29-083391de54a4.png)
-
-
-
 
 ## 😱 Challenges
 
