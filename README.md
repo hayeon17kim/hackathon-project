@@ -44,6 +44,9 @@
  - /report        - 주간 완료한 일을 바탕으로, 많이한 일, 부족한 일 의 상태를 출력한다.
  - /hello         - 로그인 정보를 바탕으로 간단한 메시지를 출력한다.
  
+
+## 화면
+
 **메인 화면**
 
 
@@ -80,3 +83,175 @@
 ![image](https://user-images.githubusercontent.com/68311187/96948918-aa49cf00-1521-11eb-8e15-cf5eaab6f65b.png)
 
 ![image](https://user-images.githubusercontent.com/68311187/96949020-ec731080-1521-11eb-9c29-083391de54a4.png)
+
+## 어려웠던 점
+
+### 로그인, 로그아웃 기능
+
+stateful과 달리 stateles 프로그램은 작업이 끝나면 바로 연결이 끊어지기 때문에 클라이언트가 연결을 할 때마다 유저임을 식별할 수 있는 아이디를 요청 메시지와 함께 보내도록 정의하였다.
+
+![image](https://user-images.githubusercontent.com/50407047/96950721-e717c500-1525-11eb-9bf7-26b863f0fb7a.png)
+
+
+**ClientApp.request()**
+```java
+  private static void request(String message) {
+    // 클라이언트가 서버에 stop 명령을 보내면 다음 변수를 true로 변경한다.
+    boolean stop = false;
+
+    try (Socket socket = new Socket(host, port);
+        PrintWriter out = new PrintWriter(socket.getOutputStream());
+        BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
+
+      // 메시지 이전 줄에 아이디를 보낸다.
+      // clientId.equals("$%$)가 true면 로그아웃된 상태
+      // false면 로그인된 상태
+      out.println(clientId  + "," + message);
+      out.flush();
+
+      receiveResponse(out, in);
+
+      if (message.equalsIgnoreCase("stop")) {
+        stop = true;
+      }
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+
+    if (stop) {
+      // 서버를 멈추기 위해 그냥 접속했다가 끊는다.
+      try (Socket socket = new Socket(host, port)) {
+        // 아무것도 안한다.
+        // 서버가 stop 할 기회를 주기 위함이다.
+      } catch (Exception e) {
+        // 아무것도 안한다.
+      }
+    }
+  }
+```
+
+**ClientApp.receiveResponse()**
+```java
+  private static void receiveResponse(PrintWriter out, BufferedReader in) throws Exception {
+    while (true) {
+      String response = in.readLine();
+      if (response.length() == 0) {
+        break;
+      } else if (response.length() > 3 && response.substring(0, 3).equals("$%$")) { // 
+        clientId = response.substring(3, response.length());
+        } 
+      else if (response.equals("!{}!")) {
+        // 사용자로부터 값을 입력을 받아서 서버에 보낸다.
+        out.println(Prompt.inputString(""));
+        out.flush(); // 주의! 출력하면 버퍼에 쌓인다. 서버로 보내고 싶다면 flush()를 호출하라!
+      } else {
+        System.out.println(response);
+      }
+    }
+  }
+```
+
+**ServerApp.handleClient()**
+
+```java
+String fullRequest = in.readLine();
+String[] requests = fullRequest.split(",");
+String clientId = requests[0];
+String body = requests[1];
+//...
+
+// clientId가 특정 문자열일 경우 로그아웃 상태로 간주한다.
+if (clientId.equals("$%$")) {
+  //로그아웃 상태에서 할 일
+  //...
+
+// 특정 문자열이 아닐 경우 로그인 상태로 간주한다
+} else {
+  // clientId가 유효한지 검증
+  //...
+}
+
+// body로 실제 명령 수행 
+Command command = (Command) context.get(request);
+```
+
+### 로그인한 멤버의 데이터 접근
+**ServerApp.handleClient()**
+
+```java
+String fullRequest = in.readLine();
+String[] requests = fullRequest.split(",");
+String clientId = requests[0];
+String body = requests[1];
+//...
+
+// clientId가 특정 문자열일 경우 로그아웃 상태로 간주한다.
+if (clientId.equals("$%$")) {
+  //로그아웃 상태에서 할 일
+  //...
+
+// 특정 문자열이 아닐 경우 로그인 상태로 간주한다
+} else {
+  // clientId가 유효한지 검증
+  //...
+}
+
+// body로 실제 명령 수행 
+Command command = (Command) context.get(request);
+```
+
+
+**handler.Command**
+
+커맨드 인터페이스의 `execute()`  메서드를 새로 정의한다. pms 프로젝트에서는 `execute(PrintWriter out, BufferedReader in)`이었는데, 이번 프로젝트에서는 `execute(PrintWriter out, BufferedReader in, Member member)`로 정의하였다.
+
+```java
+public interface Command {
+  void execute(PrintWriter out, BufferedReader in, Member member);
+}
+```
+
+
+
+그러면 다음과 같이 구현체의 `execute()` 메서드 안에서 로그인한 멤버의 정보로 작업을 수행할 수 있다. 
+**handler.MainScreenCommand**
+```java
+public class MainScreenCommand implements Command {
+  //...
+  
+  @Override
+  public void execute(PrintWriter out, BufferedReader in, Member loggedInMember) {
+    //..
+    // 이렇게 로그인한 멤버에 접근하여 데이터를 사용할 수 있다!
+    todoList = member.getTodoList();
+    out.printf("%s님, %s \n", member.getName(), message);
+    out.printf("%d개의 할 일이 남았습니다.\n", countTodo(todoList, date));
+    out.printf("%s개의 안 읽은 메시지가 있습니다.\n", countUnReadMessage(member.getMessageList()));
+    //..
+  }
+}
+```
+
+**ServerApp.handleClient()**
+
+실제로 메서드를 사용할 때는 다음과 같이 clientId로 찾은 멤버를 파라미터로 넘겨준다.
+
+```java
+//...
+if (clientId.equals("$%$")) {
+  //로그아웃 상태에서 할 일
+  //...
+
+// 특정 문자열이 아닐 경우 로그인 상태로 간주한다
+} else {
+  // clientId가 유효한지 검증
+  //...
+}
+Command command = (Command) context.get(request);
+if (command != null) {
+// 클라이언트가 보낸 clientId로 Member롤 찾아 파라미터로 넘겨준다.  
+	command.execute(out, in, currentMember);
+} else {
+	out.println("해당 명령을 처리할 수 없습니다!");
+}
+```
