@@ -13,6 +13,8 @@ import com.mini.project.handler.MemberDeleteCommand;
 import com.mini.project.handler.MemberDetailCommand;
 import com.mini.project.handler.MemberListCommand;
 import com.mini.project.handler.MemberUpdateCommand;
+import com.mini.project.handler.MessageDeleteCommand;
+import com.mini.project.handler.MessageDeleteCommand;
 import com.mini.project.handler.MessageDetailCommand;
 import com.mini.project.handler.MessageListCommand;
 import com.mini.project.handler.MessageSendCommand;
@@ -54,6 +56,7 @@ public class RequestMappingListener implements ApplicationContextListener {
     context.put("/message/send", new MessageSendCommand(memberList));
     context.put("/message/list", new MessageListCommand());
     context.put("/message/detail", new MessageDetailCommand());
+    context.put("/message/delete", new MessageDeleteCommand()); 
     
     context.put("/login", new LogInCommand(memberList));
     context.put("/logout", new LogOutCommand());

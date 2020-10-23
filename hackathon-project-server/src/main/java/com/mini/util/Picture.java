@@ -16,18 +16,18 @@ public class Picture {
     String timeNow = date2.format(time.getTime());
 
     getDoubleLine(out);
-    out.printf("%s          %s\n", date, timeNow);
+    out.printf("%s%20s\n", date, timeNow);
     getDoubleLine(out);
   }
   
-  public static void printMailBox(PrintWriter out) {
+  public static void printMailBox(PrintWriter out, int count) {
     out.println("      _________");
     out.println("    .`.        `.");
     out.println("   /   \\ .======.\\");
     out.println("   |   | |______||");
-    out.println("   |   |   _____ |");
-    out.println("   |   |  /    / |");
-    out.println("   |   | /____/  |");
+    out.printf("   |   |   _____ | %d개의 \n", count);
+    out.println("   |   |  /    / | 안 읽은");
+    out.println("   |   | /____/  | 메시지");
     out.println("   | _ |         |");
     out.println("   |/ \\|.-\"```\"-.|");
     out.println("   `` |||      |||");

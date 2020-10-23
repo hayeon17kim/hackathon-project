@@ -22,7 +22,7 @@ public class MemberDeleteCommand implements Command {
       int index = indexOf(id);
 
       if (index == -1) {
-        out.println("해당 번호의 회원이 없습니다.");
+        out.println("해당 이름의 회원이 없습니다.");
         return;
       }
 

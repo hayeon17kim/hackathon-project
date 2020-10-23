@@ -24,7 +24,7 @@ public class MemberDetailCommand implements Command {
       Member member = findById(id);
 
       if (member == null) {
-        out.println("해당 번호의 회원이 없습니다.");
+        out.println("해당 이름의 회원이 없습니다.");
         return;
       }
 

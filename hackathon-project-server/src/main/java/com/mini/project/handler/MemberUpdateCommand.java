@@ -18,11 +18,11 @@ public class MemberUpdateCommand implements Command {
   public void execute(PrintWriter out, BufferedReader in, Member loggedInMember) {
     try {
       out.println("[회원 변경]");
-      String id = Prompt.inputString("번호? ", out, in);
+      String id = Prompt.inputString("이름? ", out, in);
       Member member = findById(id);
 
       if (member == null) {
-        out.println("해당 번호의 회원이 없습니다.");
+        out.println("해당 이름의 회원이 없습니다.");
         return;
       }
 
