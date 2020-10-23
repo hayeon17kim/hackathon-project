@@ -7,6 +7,7 @@
 ## 바로가기
 - 🎯 [목표](https://github.com/hayeon17kim/hackathon-project#-goal) 
 - 🗣️ [주요 명령어와 기능](https://github.com/hayeon17kim/hackathon-project#-command)
+- 📐 [유스케이스 다이어그램]()
 - 📺 [화면](https://github.com/hayeon17kim/hackathon-project#-view)
 - 😱 [도전](https://github.com/hayeon17kim/hackathon-project#-challenges)
 - 💡 [느낀점](https://github.com/hayeon17kim/hackathon-project#-%EB%8A%90%EB%82%80%EC%A0%90)
@@ -54,6 +55,9 @@
  - `/status`: 간단한 상태메시지를 등록하고 main화면에 보여준다.
  - `/report`: 주간 완료한 일을 바탕으로, 많이한 일, 부족한 일 의 상태를 출력한다.
  
+
+## Use Case Diagram
+![image](https://user-images.githubusercontent.com/50407047/96955564-d9b40800-1530-11eb-94fc-6d1249cb9ac3.png)
 
 ## 📺 View
 
