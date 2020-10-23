@@ -1,6 +1,6 @@
 ﻿# ✍ 나의 개인 비서, NABI ☑️ 
  
-![logo](https://user-images.githubusercontent.com/50407047/96955226-0ca9cc00-1530-11eb-8acb-f246799e2dbd.png)
+![image](https://user-images.githubusercontent.com/50407047/96961838-74681300-1540-11eb-9c85-bf8dceee3bfb.png)
 
 비트캠프 자바 과정 2차 해커톤에서 진행한 팀 프로젝트입니다. (김하연, 이승혁)
 
