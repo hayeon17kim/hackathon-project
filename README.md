@@ -9,7 +9,7 @@
 - 🗣️ [주요 명령어와 기능](https://github.com/hayeon17kim/hackathon-project#-command)
 - 📺 [화면](https://github.com/hayeon17kim/hackathon-project#-view)
 - 😱 [도전](https://github.com/hayeon17kim/hackathon-project#-challenges)
-- 💡 [느낀점](https://github.com/hayeon17kim/hackathon-project#-goal)
+- 💡 [느낀점](https://github.com/hayeon17kim/hackathon-project#-%EB%8A%90%EB%82%80%EC%A0%90)
 
 
 ## 🎯 Goal
@@ -27,33 +27,32 @@
 ## 🗣️ Command
 
 ### Member
- - /member/add    - 새로운 회원가입을 받는다.
- - /member/list   - 가입된 회원 정보를 본다. (Command 클래스에 Member 을 받으며 로그인을 하지 않으면 사용 할수 없다.)
- - /member/detail - 아이디 정보를 입력하여 회원정보를 간략히 출력해준다.
- - /member/update - 아이디 입력으로 회원정보를 수정할 수 있다.
- - /member/delete - 회원정보를 삭제할 수 있다.
+ - `/member/add`: 새로운 회원가입을 받는다.
+ - `/member/list`: 가입된 회원 정보를 본다. (Command 클래스에 Member 을 받으며 로그인을 하지 않으면 사용 할수 없다.)
+ - `/member/detail`: 아이디 정보를 입력하여 회원정보를 간략히 출력해준다.
+ - `/member/update`: 아이디 입력으로 회원정보를 수정할 수 있다.
+ - `/member/delete`: 회원정보를 삭제할 수 있다.
  
 ### Todo
- - /todo/add      - 스케줄을 추가할수 있다.
- - /todo/delete   - 이미 등록된 스케줄을 삭제할 수 있다.
- - /todo/detail   - 등록된 스케줄의 상세정보를 확인할 수 있다.
- - /todo/list     - 스케줄 정보를 현재 날짜에 맞추어 출력해 준다.
- - /todo/update   - 등록된 할 일 정보를 수정할 수 있다.
- - /todo/check    - 해야할 일의 완료,비완료 상태를 체크할 수 있다.
- - /todo/uncheck  - 해야할 일의 완료,비완료 상태를 체크할 수 있다.
+ - `/todo/add`: 스케줄을 추가할수 있다.
+ - `/todo/delete`: 이미 등록된 스케줄을 삭제할 수 있다.
+ - `/todo/detail`: 등록된 스케줄의 상세정보를 확인할 수 있다.
+ - `/todo/list`: 스케줄 정보를 현재 날짜에 맞추어 출력해 준다.
+ - `/todo/update`: 등록된 할 일 정보를 수정할 수 있다.
+ - `/todo/check`: 해야할 일의 완료,비완료 상태를 체크할 수 있다.
+ - `/todo/uncheck`: 해야할 일의 완료,비완료 상태를 체크할 수 있다.
  
 ### Message
- - /message/send  - 입력한 회원에게 메시지를 전송할 수 있다.
- - /message/list  - 현재 회원정보를 바탕으로 전송받은 메시지 리스트를 출력해준다.
- - /message/delete - 제목 검색을 통해 전송받은 메시지를 삭제할 수 있다.
- - /message/detail - 제목 검색을 통해 메시지를 스크린에 표시해준다.
+ - `/message/send`: 입력한 회원에게 메시지를 전송할 수 있다.
+ - `/message/list`: 현재 회원정보를 바탕으로 전송받은 메시지 리스트를 출력해준다.
+ - `/message/delete`: 제목 검색을 통해 전송받은 메시지를 삭제할 수 있다.
+ - `/message/detail`: 제목 검색을 통해 메시지를 스크린에 표시해준다.
  
 ### indenpendent Command
- - /              - 현재시간, 상태, 오늘의 할일을 출력한다.
- - /login         - 등록된 회원정보를 바탕으로 로그인 할수 있다.
- - /status        - 간단한 상태메시지를 등록하고 main화면에 보여준다.
- - /report        - 주간 완료한 일을 바탕으로, 많이한 일, 부족한 일 의 상태를 출력한다.
- - /hello         - 로그인 정보를 바탕으로 간단한 메시지를 출력한다.
+ - `/`: 현재시간, 상태, 오늘의 할일을 출력한다.
+ - `/login`: 등록된 회원정보를 바탕으로 로그인 할수 있다.
+ - `/status`: 간단한 상태메시지를 등록하고 main화면에 보여준다.
+ - `/report`: 주간 완료한 일을 바탕으로, 많이한 일, 부족한 일 의 상태를 출력한다.
  
 
 ## 📺 View
