@@ -33,7 +33,6 @@
 ![image](https://user-images.githubusercontent.com/68311187/96949020-ec731080-1521-11eb-9c29-083391de54a4.png)
 
 
-
 ## 🗣️ Command
 
 ### Member
@@ -94,6 +93,9 @@
 ![image](https://user-images.githubusercontent.com/68311187/96948918-aa49cf00-1521-11eb-8e15-cf5eaab6f65b.png)
 
 ![image](https://user-images.githubusercontent.com/68311187/96949020-ec731080-1521-11eb-9c29-083391de54a4.png)
+
+
+
 
 ## 😱 Challenges
 
