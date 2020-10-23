@@ -28,10 +28,9 @@
 
 ![image](https://user-images.githubusercontent.com/50407047/96745570-3ca68180-1401-11eb-96f3-e4f8d01838f5.png)
 
-![image](https://user-images.githubusercontent.com/68311187/96948918-aa49cf00-1521-11eb-8e15-cf5eaab6f65b.png)
+![image](https://user-images.githubusercontent.com/50407047/96957375-65c82e80-1535-11eb-8dc7-233b199611f2.png)
 
-![image](https://user-images.githubusercontent.com/68311187/96949020-ec731080-1521-11eb-9c29-083391de54a4.png)
-
+![image](https://user-images.githubusercontent.com/50407047/96957429-8b553800-1535-11eb-8a92-2e5f73c7b157.png)
 
 ## 🗣️ Command
 
