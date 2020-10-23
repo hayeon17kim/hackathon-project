@@ -54,9 +54,9 @@ public class RequestMappingListener implements ApplicationContextListener {
     context.put("/todo/uncheck", new TodoUnCheckCommand());
     
     context.put("/message/send", new MessageSendCommand(memberList));
-    context.put("/message/list", new MessageListCommand());
-    context.put("/message/detail", new MessageDetailCommand());
-    context.put("/message/delete", new MessageDeleteCommand()); 
+    context.put("/message/list", new MessageListCommand(memberList));
+    context.put("/message/detail", new MessageDetailCommand(memberList));
+    context.put("/message/delete", new MessageDeleteCommand(memberList)); 
     
     context.put("/login", new LogInCommand(memberList));
     context.put("/logout", new LogOutCommand());

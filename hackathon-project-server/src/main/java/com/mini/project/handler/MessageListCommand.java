@@ -10,10 +10,16 @@ import com.mini.util.Picture;
 
 public class MessageListCommand implements Command {
   
-  
+  List<Member> memberList;
+  List<Message> messageList;
+
+  public MessageListCommand(List<Member> list) {
+    this.memberList = list;
+  }
   @Override
   public void execute(PrintWriter out, BufferedReader in, Member loggedInMember) {
     try {
+      messageList = loggedInMember.getMessageList();
       
       Picture.getHeader(out);
       out.printf("    %s님의 메시지함   \n", loggedInMember.getName());
@@ -22,8 +28,10 @@ public class MessageListCommand implements Command {
       Picture.getSingleLine(out);
       
       
+      
       for (Message message : loggedInMember.getMessageList()) {
-        out.println((message.isRead()  ? " ●" : " ○") + " | " + message.getSender().getName() + " | " + message.getContent());
+        Member sender = findById(message.getSender());
+        out.println((message.isRead()  ? " ●" : " ○") + " | " + sender.getId() + " | " + message.getTitle());
       }
       Picture.getDoubleLine(out);
       
@@ -40,6 +48,16 @@ public class MessageListCommand implements Command {
         result++;
     }
     return result;
+  }
+  
+  private Member findById(String id) {
+    for (int i = 0; i < memberList.size(); i++) {
+      Member member = memberList.get(i);
+      if (member.getId().equals(id)) {
+        return member;
+      }
+    }
+    return null;
   }
   
 }

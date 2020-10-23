@@ -10,7 +10,12 @@ import com.mini.util.Prompt;
 public class MessageDeleteCommand implements Command {
 
 
+  List<Member> memberList;
   List<Message> messageList;
+
+  public MessageDeleteCommand(List<Member> list) {
+    this.memberList = list;
+  }
 
   @Override
   public void execute(PrintWriter out, BufferedReader in, Member loggedInMember) {

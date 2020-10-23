@@ -1,17 +1,17 @@
 package com.mini.project.domain;
 
 public class Message {
-  
-  public Message(Member sender, String title, String content) {
+
+  public Message(String senderId, String title, String content) {
     this.isRead = false;
-    this.sender = sender;
+    this.senderId = senderId;
     this.title = title;
     this.content = content;
     this.time = System.currentTimeMillis();
   }
   
   boolean isRead;
-  Member sender;
+  String senderId;
   String title;
   String content;
   long time;
@@ -24,16 +24,16 @@ public class Message {
     this.isRead = isRead;
   }
 
-  public Member getSender() {
-    return sender;
+  public String getSender() {
+    return senderId;
   }
 
-  public void setSender(Member sender) {
-    this.sender = sender;
+  public void setSender(String senderId) {
+    this.senderId = senderId;
   }
 
   public String getContent() {
-    return title;
+    return content;
   }
 
   public void setContent(String content) {

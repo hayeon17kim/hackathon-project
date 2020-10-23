@@ -12,7 +12,12 @@ import com.mini.util.Prompt;
 
 public class MessageDetailCommand implements Command {
 
+  List<Member> memberList;
   List<Message> messageList;
+
+  public MessageDetailCommand(List<Member> list) {
+    this.memberList = list;
+  }
   
   @Override
   public void execute(PrintWriter out, BufferedReader in, Member loggedInMember) {
@@ -29,9 +34,8 @@ public class MessageDetailCommand implements Command {
       Picture.getHeader(out);
       out.printf("     %s     \n", title);
       Picture.getSingleLine(out);
-      out.printf(" 제목 | %s\n", message.getTitle());
-      Picture.getSingleLine(out);
-      out.printf(" 발신 | %s\n", message.getSender().getName());
+      Member sender = findById(message.getSender());
+      out.printf(" 발신 | %s\n", sender.getName());
       out.printf(" 날짜 | %s\n", getTime(message.getTime()));
       out.printf(" 내용 | %s\n", message.getContent());
 
@@ -49,6 +53,16 @@ public class MessageDetailCommand implements Command {
     for (Message message : messageList) {
       if (message.getTitle().equals(title)) {
         return message;
+      }
+    }
+    return null;
+  }
+  
+  private Member findById(String id) {
+    for (int i = 0; i < memberList.size(); i++) {
+      Member member = memberList.get(i);
+      if (member.getId().equals(id)) {
+        return member;
       }
     }
     return null;

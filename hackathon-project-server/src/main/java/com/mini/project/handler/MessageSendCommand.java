@@ -27,7 +27,7 @@ public class MessageSendCommand implements Command {
       }
       String title = Prompt.inputString("메시지 제목: ", out, in);
       String content = Prompt.inputString("메시지 내용: ", out, in);
-      Message message = new Message(loggedInMember, title, content);
+      Message message = new Message(loggedInMember.getId(), title, content);
       
       member.getMessageList().add(message);
       
@@ -48,4 +48,5 @@ public class MessageSendCommand implements Command {
     return null;
   }
 
+  
 }

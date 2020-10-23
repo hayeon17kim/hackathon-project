@@ -29,5 +29,7 @@ public class MemberListCommand implements Command {
           member.getId());
     }
   }
+  
+
 
 }
