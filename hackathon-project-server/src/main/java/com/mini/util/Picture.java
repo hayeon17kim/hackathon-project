@@ -20,6 +20,16 @@ public class Picture {
     getDoubleLine(out);
   }
   
+  public static void printLogo(PrintWriter out) {
+    out.println("    ");
+    out.println(" _            _         _ _     _   ");
+    out.println("| |_ ___   __| | ___   | (_)___| |_ ");
+    out.println("| __/ _ \\ / _` |/ _ \\  | | / __| __|");
+    out.println("| || (_) | (_| | (_) | | | \\__ \\ |_ ");
+    out.println(" \\__\\___/ \\__,_|\\___/  |_|_|___/\\__|");
+    out.println("    ");
+  }
+  
   public static void printMailBox(PrintWriter out, int count) {
     out.println("      _________");
     out.println("    .`.        `.");

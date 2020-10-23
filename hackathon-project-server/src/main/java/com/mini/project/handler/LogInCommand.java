@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.PrintWriter;
 import java.util.List;
 import com.mini.project.domain.Member;
+import com.mini.util.Picture;
 import com.mini.util.Prompt;
 
 public class LogInCommand implements Command {
@@ -40,6 +41,8 @@ public class LogInCommand implements Command {
           out.println("비밀번호가 틀렸습니다.");
         } else {
           out.println("$%$" +  id);
+          Picture.printLogo(out);
+          out.printf("%10s님, 안녕하세요!\n", findById(id).getName());
           out.println();
           out.flush();
           return findById(id);
