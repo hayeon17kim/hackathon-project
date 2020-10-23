@@ -1,4 +1,4 @@
-﻿# ☑️ 일정관리 앱 ✍
+﻿# ✍ 일정관리 앱 ☑️ 
  
 ![logo](https://user-images.githubusercontent.com/50407047/96955226-0ca9cc00-1530-11eb-8acb-f246799e2dbd.png)
 
@@ -23,6 +23,15 @@
 - 오늘자, 이번주차 투두리스트 조회 기능
 - 특정 날짜로 일정 검색
 - 메세지 기능을 통해 회원과 회원 사이의 소통 활성화
+
+![image](https://user-images.githubusercontent.com/50407047/96745433-18e33b80-1401-11eb-8556-57512df9b50f.png)
+
+![image](https://user-images.githubusercontent.com/50407047/96745570-3ca68180-1401-11eb-96f3-e4f8d01838f5.png)
+
+![image](https://user-images.githubusercontent.com/68311187/96948918-aa49cf00-1521-11eb-8e15-cf5eaab6f65b.png)
+
+![image](https://user-images.githubusercontent.com/68311187/96949020-ec731080-1521-11eb-9c29-083391de54a4.png)
+
 
 
 ## 🗣️ Command
@@ -72,20 +81,10 @@
  - 할 일 정보: 완료여부(● : 완료, ○ : 미완료), 항목, 제목
 
 
-![image](https://user-images.githubusercontent.com/50407047/96745433-18e33b80-1401-11eb-8556-57512df9b50f.png)
-
-![image](https://user-images.githubusercontent.com/50407047/96745570-3ca68180-1401-11eb-96f3-e4f8d01838f5.png)
-
-
 ### 일주일 통계 화면
 - 일주일 간 완료한 Todo 항목의 비율을 계산해 그래프로 출력합니다.
 - 일주일 간 많이 한 항목에 해당하는 아스키 아트를 출력합니다.
 
-*예시 화면*
-
-![image](https://user-images.githubusercontent.com/50407047/96745057-aa05e280-1400-11eb-8448-83fec3f4f148.png)
-
-![image](https://user-images.githubusercontent.com/50407047/96745158-c99d0b00-1400-11eb-9314-ddd14f6392ac.png)
 
 ### 메시지 출력 화면
 - 아이디를 정하여 해당 아이디를 가진 사용자에게 메시지를 보낼 수 있습니다.
