@@ -1,4 +1,4 @@
-﻿# ✍ 일정관리 앱 ☑️ 
+﻿# ✍ 나의 개인 비서, 나비 ☑️ 
  
 ![logo](https://user-images.githubusercontent.com/50407047/96955226-0ca9cc00-1530-11eb-8acb-f246799e2dbd.png)
 
