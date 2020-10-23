@@ -13,7 +13,8 @@
 - 메세지 기능을 통해 회원과 회원 사이의 소통 활성화
 
 
-**Command List**
+## 주요 명령어와 
+
 * Member
  - /member/add    - 새로운 회원가입을 받는다.
  - /member/list   - 가입된 회원 정보를 본다. (Command 클래스에 Member 을 받으며 로그인을 하지 않으면 사용 할수 없다.)
