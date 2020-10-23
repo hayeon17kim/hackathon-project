@@ -1,16 +1,23 @@
 ﻿# ✍ 나의 개인 비서, NABI ☑️ 
- 
+
 ![image](https://user-images.githubusercontent.com/50407047/96961838-74681300-1540-11eb-9c85-bf8dceee3bfb.png)
 
 비트캠프 자바 과정 2차 해커톤에서 진행한 팀 프로젝트입니다. (김하연, 이승혁)
 
 ## 바로가기
 - 🎯 [목표](https://github.com/hayeon17kim/hackathon-project#-goal) 
+
 - 🗣️ [주요 명령어와 기능](https://github.com/hayeon17kim/hackathon-project#-command)
+
 - 📐 [유스케이스 다이어그램]()
+
 - 📺 [화면](https://github.com/hayeon17kim/hackathon-project#-view)
+
 - 😱 [도전](https://github.com/hayeon17kim/hackathon-project#-challenges)
+
 - 💡 [느낀점](https://github.com/hayeon17kim/hackathon-project#-%EB%8A%90%EB%82%80%EC%A0%90)
+
+  
 
 
 ## 🎯 Goal
@@ -39,7 +46,7 @@
  - `/member/detail`: 아이디 정보를 입력하여 회원정보를 간략히 출력해준다.
  - `/member/update`: 아이디 입력으로 회원정보를 수정할 수 있다.
  - `/member/delete`: 회원정보를 삭제할 수 있다.
- 
+
 ### Todo
  - `/todo/add`: 스케줄을 추가할수 있다.
  - `/todo/delete`: 이미 등록된 스케줄을 삭제할 수 있다.
@@ -48,13 +55,13 @@
  - `/todo/update`: 등록된 할 일 정보를 수정할 수 있다.
  - `/todo/check`: 해야할 일의 완료,비완료 상태를 체크할 수 있다.
  - `/todo/uncheck`: 해야할 일의 완료,비완료 상태를 체크할 수 있다.
- 
+
 ### Message
  - `/message/send`: 입력한 회원에게 메시지를 전송할 수 있다.
  - `/message/list`: 현재 회원정보를 바탕으로 전송받은 메시지 리스트를 출력해준다.
  - `/message/delete`: 제목 검색을 통해 전송받은 메시지를 삭제할 수 있다.
  - `/message/detail`: 제목 검색을 통해 메시지를 스크린에 표시해준다.
- 
+
 ### indenpendent Command
  - `/`: 현재시간, 상태, 오늘의 할일을 출력한다.
  - `/login`: 등록된 회원정보를 바탕으로 로그인 할수 있다.
@@ -273,10 +280,10 @@ if (command != null) {
 }
 ```
 
+
+
 ## 💡 느낀점
 
 - 짧은 시간 이내에 원하는 기능을 모두 구현하려다 보니 메서드명과 변수명에 일관성을 지키지 못하였다. 팀 프로젝트이니만큼 서로의 코드를 이해하기 위해서는 직관적인 메서드명과 변수명을 사용하는 것이 중요하다는 것을 느꼈다.
-
 - 첫 프로젝트 때는 원하는 기능이 있어도 처음부터 '이건 안 될 것 같아'라고 시도를 꺼려했다. 그것이 아쉬움으로 남아 이번에는 안 될 것 같은 기능들도 일단 정리를 하고 단계를 나눠 하나하나 구현해보려고 노력해보니 훨씬 많은 것을 얻을 수 있었다. 앞으로의 프로젝트도 이러한 자세로 임해야겠다고 생각했다.
-
 - 프로젝트에 적당한 수준의 문서화는 필요하다. 프로젝트 초반에 원하는 앱의 모습만을 생각했을 때는 막막함이 앞섰다. 그러나 유저 시나리오를 짜고 클래스 구조를 짜면서 유스케이스 단위로 구현해야 할 앱을 대하니 훨씬 빠르게 작업할 수 있었다. 뿐만 아니라 팀원과 소통할 때도 이 문서를 가지고 소통하니 원활하게 할 수 있었다.
