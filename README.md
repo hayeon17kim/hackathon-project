@@ -35,7 +35,6 @@
 ## 🗣️ Command
 
 ### Member
- - `/member/add`: 새로운 회원가입을 받는다.
  - `/member/list`: 가입된 회원 정보를 본다. (Command 클래스에 Member 을 받으며 로그인을 하지 않으면 사용 할수 없다.)
  - `/member/detail`: 아이디 정보를 입력하여 회원정보를 간략히 출력해준다.
  - `/member/update`: 아이디 입력으로 회원정보를 수정할 수 있다.
@@ -59,9 +58,10 @@
 ### indenpendent Command
  - `/`: 현재시간, 상태, 오늘의 할일을 출력한다.
  - `/login`: 등록된 회원정보를 바탕으로 로그인 할수 있다.
+ - `/logout : 로그아웃 기능을 구현한다.
  - `/status`: 간단한 상태메시지를 등록하고 main화면에 보여준다.
  - `/report`: 주간 완료한 일을 바탕으로, 많이한 일, 부족한 일 의 상태를 출력한다.
- 
+ - `/signup`: 새로운 회원가입을 받는다.
 
 ## Use Case Diagram
 ![image](https://user-images.githubusercontent.com/50407047/96955564-d9b40800-1530-11eb-94fc-6d1249cb9ac3.png)
