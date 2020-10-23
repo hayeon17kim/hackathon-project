@@ -22,22 +22,21 @@
  - /todo/list     - 스케줄 정보를 현재 날짜에 맞추어 출력해 준다.
  - /todo/update   - 등록된 할 일 정보를 수정할 수 있다.
  - /todo/check    - 해야할 일의 완료,비완료 상태를 체크할 수 있다.
+ - /todo/uncheck  - 해야할 일의 완료,비완료 상태를 체크할 수 있다.
  
  * Message
-  - /message/send - 입력한 회원에게 메시지를 전송할 수 있다.
-  - /message/list - 현재 회원정보를 바탕으로 전송받은 메시지 리스트를 출력해준다.
-  - /message/delete - 제목 검색을 통해 전송받은 메시지를 삭제할 수 있다.
-  - /message/detail - 제목 검색을 통해 메시지를 스크린에 표시해준다.
-  
+ - /message/send  - 입력한 회원에게 메시지를 전송할 수 있다.
+ - /message/list  - 현재 회원정보를 바탕으로 전송받은 메시지 리스트를 출력해준다.
+ - /message/delete - 제목 검색을 통해 전송받은 메시지를 삭제할 수 있다.
+ - /message/detail - 제목 검색을 통해 메시지를 스크린에 표시해준다.
+ 
  * indenpendent Command
-
  - /              - 현재시간, 상태, 오늘의 할일을 출력한다.
  - /login         - 등록된 회원정보를 바탕으로 로그인 할수 있다.
  - /status        - 간단한 상태메시지를 등록하고 main화면에 보여준다.
  - /report        - 주간 완료한 일을 바탕으로, 많이한 일, 부족한 일 의 상태를 출력한다.
  - /hello         - 로그인 정보를 바탕으로 간단한 메시지를 출력한다.
  
-
 **메인 화면**
 
 
@@ -66,4 +65,11 @@
 
 ![image](https://user-images.githubusercontent.com/50407047/96745158-c99d0b00-1400-11eb-9314-ddd14f6392ac.png)
 
+**메시지 출력 화면**
+- 아이디를 정하여 해당 아이디를 가진 사용자에게 메시지를 보낼 수 있습니다.
+- 발신자와 제목을 아스키 아트와 함께 출력합니다.
+- 커맨드 입력을 통해 메시지의 전송 받은시간,내용 등을 출력합니다.
 
+![image](https://user-images.githubusercontent.com/68311187/96948918-aa49cf00-1521-11eb-8e15-cf5eaab6f65b.png)
+
+![image](https://user-images.githubusercontent.com/68311187/96949020-ec731080-1521-11eb-9c29-083391de54a4.png)
