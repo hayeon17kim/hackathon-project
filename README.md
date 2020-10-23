@@ -24,6 +24,13 @@
 - 특정 날짜로 일정 검색
 - 메세지 기능을 통해 회원과 회원 사이의 소통 활성화
 
+![image](https://user-images.githubusercontent.com/50407047/96745433-18e33b80-1401-11eb-8556-57512df9b50f.png)
+
+![image](https://user-images.githubusercontent.com/50407047/96745570-3ca68180-1401-11eb-96f3-e4f8d01838f5.png)
+
+![image](https://user-images.githubusercontent.com/50407047/96957375-65c82e80-1535-11eb-8dc7-233b199611f2.png)
+
+![image](https://user-images.githubusercontent.com/50407047/96957429-8b553800-1535-11eb-8a92-2e5f73c7b157.png)
 
 ## 🗣️ Command
 
