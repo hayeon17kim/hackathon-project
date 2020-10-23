@@ -64,7 +64,7 @@
  - `/signup`: 새로운 회원가입을 받는다.
 
 ## Use Case Diagram
-![image](https://user-images.githubusercontent.com/50407047/96955564-d9b40800-1530-11eb-94fc-6d1249cb9ac3.png)
+![image](https://user-images.githubusercontent.com/50407047/96969210-17268e80-154d-11eb-860c-95b911c995cf.png)
 
 ## 📺 View
 
