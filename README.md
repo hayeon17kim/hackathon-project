@@ -3,11 +3,11 @@
 비트캠프 자바 과정 2차 해커톤에서 진행한 팀 프로젝트입니다. (김하연, 이승혁)
 
 ## 바로가기
-- 🎯 [목표](https://github.com/hayeon17kim/hackathon-project/blob/main/README.md#-goal) 
-- 🗣️ [주요 명령어와 기능](https://github.com/hayeon17kim/hackathon-project/blob/main/README.md#-command)
-- 📺 [화면]
-- 😱 도전
-- 💡 느낀점
+- 🎯 [목표](https://github.com/hayeon17kim/hackathon-project#-goal) 
+- 🗣️ [주요 명령어와 기능](https://github.com/hayeon17kim/hackathon-project#-command)
+- 📺 [화면](https://github.com/hayeon17kim/hackathon-project#-view)
+- 😱 [도전](https://github.com/hayeon17kim/hackathon-project#-challenges)
+- 💡 [느낀점](https://github.com/hayeon17kim/hackathon-project#-느낀점)
 
 
 ## 🎯 Goal
