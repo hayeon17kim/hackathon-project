@@ -19,6 +19,7 @@ import com.mini.project.handler.Command;
 import com.mini.project.listener.AppInitListener;
 import com.mini.project.listener.DataHandlerListener;
 import com.mini.project.listener.RequestMappingListener;
+import com.mini.util.Picture;
 
 public class ServerApp {
   
@@ -156,7 +157,11 @@ public class ServerApp {
       Member currentMember = defaultMember;
       if (clientId.equals("$%$")) {
         System.out.println("[로그아웃 상태]");
-        out.println("[로그아웃 상태]");
+        out.println(" ");
+        out.println("비회원으로 입장합니다");
+        Picture.printLogo(out);
+        out.printf("프로그램을 사용하기 위해서는 로그인이 필요합니다.\n", "");
+        out.println(" ");
 
       } else {
         System.out.println("[로그인된 아이디: " + clientId + "]");
