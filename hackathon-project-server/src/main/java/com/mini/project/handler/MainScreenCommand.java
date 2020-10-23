@@ -19,6 +19,15 @@ public class MainScreenCommand implements Command {
   
   @Override
   public void execute(PrintWriter out, BufferedReader in, Member member) {
+    
+    if (member.getId().equals("default")) {
+      out.println(" ");
+      out.println("비회원으로 입장합니다");
+      Picture.printLogo(out);
+      out.printf("프로그램을 사용하기 위해서는 로그인이 필요합니다.\n", "");
+      out.println(" ");
+      return;
+    }
     SimpleDateFormat date1 = new SimpleDateFormat("yyyy-MM-dd");
     SimpleDateFormat date2 = new SimpleDateFormat("HH : mm");
 

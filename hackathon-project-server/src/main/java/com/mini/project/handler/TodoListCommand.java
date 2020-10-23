@@ -25,14 +25,14 @@ public class TodoListCommand implements Command {
       
       switch (keyword) {
         case "weekly":
+          out.println("==============================");
           out.println(weeklyTodos(thisWeek));
+          out.println("==============================");
           break;
         default:
           out.printf("[%s 일정]\n", keyword);
           out.println(findByDate(Date.valueOf(keyword)));
       }
-      
-      
     } catch (Exception e) {
       e.printStackTrace();
     }
@@ -42,28 +42,29 @@ public class TodoListCommand implements Command {
     for (int i = 0; i < 7; i++) {
       switch (i) {
         case 0:
-          sb.append("(일) ");
+          sb.append(" 일 |");
           break;
         case 1:
-          sb.append("(월) ");
+          sb.append(" 월 |");
           break;
         case 2:
-          sb.append("(화) ");
+          sb.append(" 화 |");
           break;
         case 3:
-          sb.append("(수) ");
+          sb.append(" 수 |");
           break;
         case 4:
-          sb.append("(목) ");
+          sb.append(" 목 |");
           break;
         case 5:
-          sb.append("(금) ");
+          sb.append(" 금 |");
           break;
         case 6:
-          sb.append("(토) ");
+          sb.append(" 토 |");
           break;
       }
       sb.append(findByDate(dates[i]));
+      sb.append("------------------------------\n");
     }
     return sb.toString();
   }

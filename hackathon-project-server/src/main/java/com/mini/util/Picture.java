@@ -21,7 +21,8 @@ public class Picture {
   }
   
   public static void printLogo(PrintWriter out) {
-    out.println("    ");
+    out.println("                       ");
+    out.println("             나의 개인비서,       ");
     out.println(",---.   .--.   ____     _______  .-./`)  ");
     out.println("|    \\  |  | .'  __ `. \\  ____  \\\\ .-.') ");
     out.println("|  ,  \\ |  |/   '  \\  \\| |    \\ |/ `-' \\ ");

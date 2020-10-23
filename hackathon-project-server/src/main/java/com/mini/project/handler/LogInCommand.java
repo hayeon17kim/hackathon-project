@@ -42,7 +42,7 @@ public class LogInCommand implements Command {
         } else {
           out.println("$%$" +  id);
           Picture.printLogo(out);
-          out.printf("%10s님, 안녕하세요!\n", findById(id).getName());
+          out.printf("%13s님, 안녕하세요!\n", findById(id).getName());
           out.println();
           out.flush();
           return findById(id);
