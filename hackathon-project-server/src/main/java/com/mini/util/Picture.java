@@ -22,12 +22,15 @@ public class Picture {
   
   public static void printLogo(PrintWriter out) {
     out.println("    ");
-    out.println(" _            _         _ _     _   ");
-    out.println("| |_ ___   __| | ___   | (_)___| |_ ");
-    out.println("| __/ _ \\ / _` |/ _ \\  | | / __| __|");
-    out.println("| || (_) | (_| | (_) | | | \\__ \\ |_ ");
-    out.println(" \\__\\___/ \\__,_|\\___/  |_|_|___/\\__|");
-    out.println("    ");
+    out.println(",---.   .--.   ____     _______  .-./`)  ");
+    out.println("|    \\  |  | .'  __ `. \\  ____  \\\\ .-.') ");
+    out.println("|  ,  \\ |  |/   '  \\  \\| |    \\ |/ `-' \\ ");
+    out.println("|  |\\_ \\|  ||___|  /  || |____/ / `-'`\"` ");
+    out.println("|  _( )_\\  |   _.-`   ||   _ _ '. .---.  ");
+    out.println("| (_ o _)  |.'   _    ||  ( ' )  \\|   |  ");
+    out.println("|  (_,_)\\  ||  _( )_  || (_{;}_) ||   |  ");
+    out.println("|  |    |  |\\ (_ o _) /|  (_,_)  /|   |  ");
+    out.println("'--'    '--' '.(_,_).' /_______.' '---'  ");
   }
   
   public static void printMailBox(PrintWriter out, int count) {
